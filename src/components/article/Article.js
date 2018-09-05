@@ -5,7 +5,7 @@ export default class Article extends Component {
   render() {
     return (
       <div>
-        
+        <h1>Article</h1>
       </div>
     )
   }
