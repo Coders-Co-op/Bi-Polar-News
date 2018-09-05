@@ -1,6 +1,16 @@
 
-.App {
+.app-wrapper {
   width:100vw;
   height:100vh;
   background-color:#DDD6DD;
+}
+.app-header{
+  height: 10%;
+}
+.app-article{
+  background-color: aqua;
+  height: 78%;
+}
+.app-footer{
+  height: 12%;
 }
