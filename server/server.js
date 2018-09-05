@@ -9,6 +9,7 @@ const {SERVER_PORT, CONNECTION_STRING} = process.env;
 
 // MIDDLEWARE
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 // ENDPOINTS
 app.get("/api/onload", async (req, res) => {
