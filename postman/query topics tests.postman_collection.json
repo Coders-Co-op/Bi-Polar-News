@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "75dcbd6f-aa94-4621-a130-845d60c49113",
+		"name": "query topics tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "query topics get request for article pairs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d180ac2-fe45-4341-bc7a-c0672ace3255",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Check if response is an array\", function () {",
+							"    pm.expect(Array.isArray(pm.response.json())).to.equal(true)",
+							"});",
+							"pm.test(\"Check if response length is 6\", function () {",
+							"    pm.expect(pm.response.json().length).to.equal(6)",
+							"});",
+							"pm.test(\"Check if we are returning a string for property 'keywords'\", function () {",
+							"    pm.expect(pm.response.json()[0].keywords).to.equal(\"3d printed guns\")",
+							"});",
+							"pm.test(\"Check if we have matching pairs\", function () {",
+							"    pm.expect(pm.response.json()[0].keywords&&pm.response.json()[1].keywords).to.equal(\"3d printed guns\")",
+							"})",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 700ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/article/politics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"article",
+						"politics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

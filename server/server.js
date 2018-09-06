@@ -17,6 +17,12 @@ app.get("/api/onload", async (req, res) => {
     let result = await db.bpn_junction.test_bpn_query();
     res.status(200).send(result);
 })
+app.get("/api/article/:topics", async (req, res) => {
+    let db = app.get("db");
+    let { topics }=req.params
+    let result = await db.articles.query_topics(topics)
+    res.status(200).send(result);
+})
 
 massive(CONNECTION_STRING).then(db => {
     app.set("db", db)
