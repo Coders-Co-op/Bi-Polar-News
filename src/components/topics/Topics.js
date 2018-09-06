@@ -1,7 +1,18 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { getFiveArticles } from '../../ducks/reducer';
 
-import React, { Component } from 'react'
 
-export default class Topics extends Component {
+
+ class Topics extends Component {
+  componentDidMount(topics){
+const { getFiveArticles } = this.props;
+    axios.get(`/api/article/politics`).then( res => {
+      console.log('test response', res.data)
+      getFiveArticles(res.data)
+    })
+  }
   render() {
     return (
       <div>
@@ -10,3 +21,4 @@ export default class Topics extends Component {
     )
   }
 }
+export default connect(null, { getFiveArticles })(Topics)

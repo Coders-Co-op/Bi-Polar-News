@@ -1,17 +1,20 @@
-require("dotenv").config()
+require("dotenv").config();
+
 
 const express = require("express"),
     bodyParser = require("body-parser"),
-    massive = require("massive")
+    cors = require('cors'),
+    massive = require("massive");
     ArtCtrl = require('./controller/Articles')
     PlCtrl = require('./controller/Poll');
 
 const app = express();
-const {SERVER_PORT, CONNECTION_STRING} = process.env;
+const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 // MIDDLEWARE
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // ENDPOINTS
 //Get 5 Random articles Onload
@@ -28,7 +31,7 @@ app.post('/api/poll/submit',PlCtrl.poll_submit)
 massive(CONNECTION_STRING).then(db => {
     app.set("db", db)
     console.log("Connected to DB");
-    
+
     app.listen(SERVER_PORT, () => {
         console.log(`Listening on port ${SERVER_PORT}... or are we...?`);
     })
