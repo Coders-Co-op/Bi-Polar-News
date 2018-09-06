@@ -24,6 +24,13 @@ app.get("/api/article/:topics", async (req, res) => {
     res.status(200).send(result);
 })
 
+app.get("/api/topics", async (req, res) => {
+    let db = app.get("db");
+    let result = await db.topics.get_all_topics();
+    res.status(200).send(result);
+})
+
+
 massive(CONNECTION_STRING).then(db => {
     app.set("db", db)
     console.log("Connected to DB");
