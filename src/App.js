@@ -3,22 +3,27 @@ import routes from './route'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import './App.css';
+import {withRouter} from 'react-router';
+import { connect } from 'net';
 
 class App extends Component {
+
   render() {
+  console.log("i am props match", this.props.match);
+
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="app-wrapper">
+        <header className="app-header">
           <Header />
         </header>
 
-        <article>
+        <article className="app-article">
 
           {routes}
 
         </article>
 
-        <footer>
+        <footer className ="app-footer">
           <Footer />
         </footer>
 
@@ -27,4 +32,5 @@ class App extends Component {
   }
 }
 
-export default App;
+// export default withRouter(connect(mapstatetoprops, {}) (app));
+export default withRouter(App);
