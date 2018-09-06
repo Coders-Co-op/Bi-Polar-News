@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "1a17b0af-f13e-4ca7-a366-4882c02dd5ea",
+		"name": "Poll endpoint test's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Poll results endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9086f102-be72-4571-b3c4-b1660dcf485e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test('Response returns an array',()=>{",
+							"    pm.expect(Array.isArray(pm.response.json())).to.equal(true);",
+							"});",
+							"pm.test('Array has Correct Props',()=>{",
+							"    pm.expect(pm.response.json()[0]).to.have.property('poll_id');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('art1_id');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('art2_id');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('art1_res');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('art2_res');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('surprised');",
+							"    pm.expect(pm.response.json()[0]).to.have.property('date');",
+							"});",
+							"pm.test('Array Props have the correct field data type', ()=>{",
+							"    pm.expect(pm.response.json()[0].poll_id).to.be.a('number');",
+							"    pm.expect(pm.response.json()[0].art1_id).to.be.a('number');",
+							"    pm.expect(pm.response.json()[0].art2_id).to.be.a('number');",
+							"    pm.expect(pm.response.json()[0].art1_res).to.be.a('number');",
+							"    pm.expect(pm.response.json()[0].art2_res).to.be.a('number');",
+							"    pm.expect(pm.response.json()[0].surprised).to.be.a('boolean');",
+							"    pm.expect(pm.response.json()[0].date).to.be.a('string');",
+							"});",
+							"",
+							"",
+							"var schema = [",
+							"    {",
+							"        poll_id:data2,",
+							"        art1_id:data2,",
+							"        art2_id:data2,",
+							"        art1_res:data2,",
+							"        art2_res:data2,",
+							"        surprised:data1,",
+							"        date:data3",
+							"    }",
+							"]",
+							"",
+							"var data1 = [true, false];",
+							"var data2 = [123];",
+							"var data3 = ['']",
+							"",
+							"pm.test('Schema is valid', ()=> {",
+							"  pm.expect(tv4.validate(data1, schema)).to.be.true;",
+							"  pm.expect(tv4.validate(data2, schema)).to.be.true;",
+							"  pm.expect(tv4.validate(data3, schema)).to.be.true;",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/poll/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"poll",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "poll post test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f7f55e46-865c-4768-b7db-0095519b81c3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"",
+							"pm.test(\"Should return an array\", ()=>{",
+							"    pm.expect(Array.isArray(pm.response.json())).to.equal(true);",
+							"});",
+							"var schema = [",
+							"    {",
+							"        poll_id:data2,",
+							"        art1_id:data2,",
+							"        art2_id:data2,",
+							"        art1_res:data2,",
+							"        art2_res:data2,",
+							"        surprised:data1,",
+							"        date:data3",
+							"    }",
+							"]",
+							"",
+							"var data1 = [true, false];",
+							"var data2 = [123];",
+							"var data3 = ['']",
+							"",
+							"pm.test('Schema is valid', ()=> {",
+							"  pm.expect(tv4.validate(data1, schema)).to.be.true;",
+							"  pm.expect(tv4.validate(data2, schema)).to.be.true;",
+							"  pm.expect(tv4.validate(data3, schema)).to.be.true;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 1200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);",
+							"});",
+							"pm.test('Array has Correct Props',()=>{",
+							"    pm.expect(pm.response.json()[0]).to.have.property('poll_id');",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"art1_id\":16,\n\t\"art2_id\":17,\n\t\"art1_res\":1,\n\t\"art2_res\":0,\n\t\"surprised\":false,\n\t\"date\":\"2018-09-06\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/poll/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"poll",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
