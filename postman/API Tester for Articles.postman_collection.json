@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "1ffd5bc0-d210-4d7d-91e9-77bb26020095",
+		"name": "API Tester for Articles",
+		"description": "Greg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get articles onload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a39b23f-ff20-4b9b-9593-1f9bdf681e2e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Get status of 200', () => {",
+							"    pm.response.to.have.status(200)",
+							"})",
+							"",
+							"pm.test(\"Response is an array\", () => {",
+							"    pm.expect(Array.isArray(pm.response.json())).to.equal(true)",
+							"})",
+							"",
+							"pm.test(\"Array length equals 10\", () => {",
+							"    pm.expect(pm.response.json().length).to.equal(10)",
+							"})",
+							"",
+							"pm.test(\"Array element at index 0, has title property\", () => {",
+							"    pm.expect(pm.response.json()[0]).to.have.property(\"title\")",
+							"})",
+							"",
+							"pm.test(\"Response time is less than 1000ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3030/api/onload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"onload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0e1b5470-f9ae-42dc-b59f-20d012d1a172",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "af13f3f1-8c91-4e8d-8bdb-fe2999935e69",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
