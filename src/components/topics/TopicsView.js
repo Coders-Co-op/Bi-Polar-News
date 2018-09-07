@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import './topics.css'
+import './topics.css';
+import { Link } from 'react-router-dom';
 
 export default class Topics extends Component {
   constructor() {
@@ -27,7 +28,7 @@ export default class Topics extends Component {
         topicName = e.topic_name;
         return (
           <div key={ i }>
-            <h3>{topicName}</h3>
+            <Link to="/articles"><h3>{topicName}</h3></Link>
           </div>
         )
       } else {
