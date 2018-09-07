@@ -17,14 +17,19 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // ENDPOINTS
+
 //Get 5 Random articles Onload
 app.get("/api/onload/:topics",ArtCtrl.art_onload)
+
 //Get 5 random articles based on user input
 app.get("/api/article/:topics",ArtCtrl.art_topics)
-//Get topics and subtopics
-app.get("/api/topics",ArtCtrl.get_topics)
+
+//Get list of all topics and subtopics
+app.get("/api/alltopics",ArtCtrl.get_all_topics)
+
 //Get Poll results
 app.get('/api/poll/results',PlCtrl.poll_res)
+
 //Add to Poll results
 app.post('/api/poll/submit',PlCtrl.poll_submit)
 

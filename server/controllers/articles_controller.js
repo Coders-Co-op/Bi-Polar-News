@@ -19,7 +19,7 @@ module.exports = {
       console.log(error)
     }
   },
-  get_topics: async (req, res) => {
+  get_all_topics: async (req, res) => {
     try {
       let db = req.app.get("db");
       let result = await db.topics.get_all_topics();
