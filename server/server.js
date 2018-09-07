@@ -5,8 +5,8 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     cors = require('cors'),
     massive = require("massive");
-    ArtCtrl = require('./controller/Articles')
-    PlCtrl = require('./controller/Poll');
+    ArtCtrl = require('./controllers/articles_controller')
+    PlCtrl = require('./controllers/poll_controller');
 
 const app = express();
 const { SERVER_PORT, CONNECTION_STRING } = process.env;

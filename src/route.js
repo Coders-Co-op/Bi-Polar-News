@@ -1,14 +1,15 @@
 
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import About from './components/about/About'
-import Article from './components/article/Article'
-import Donate from './components/donate/Donate'
-import Intro from './components/intro/Intro'
-import Modal from './components/modal/Modal'
-import Slider from './components/slider/Slider'
-import Topics from './components/topics/Topics'
-import Photos from './components/photos/Photos'
+import About from './components/about/About';
+import Article from './components/article/Article';
+import Donate from './components/donate/Donate';
+import Intro from './components/intro/Intro';
+import Modal from './components/modal/Modal';
+import Slider from './components/slider/Slider';
+import Topics from './components/topics/Topics';
+import Photos from './components/photos/Photos';
+import TopicsView from "./components/topics/TopicsView";
 
 const routes = (
     <Switch>
@@ -18,6 +19,7 @@ const routes = (
         <Route path="/modal" component={Modal} />        
         <Route path="/photos" component={Photos} />
         <Route path="/topics" component={Topics} />
+        <Route path="/topics-view" component={TopicsView} />
         <Route path="/about" component={About} />
         <Route path="/donate" component={Donate} />
 
