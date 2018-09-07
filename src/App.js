@@ -4,7 +4,8 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import './App.css';
 import {withRouter} from 'react-router';
-import { connect } from 'net';
+// import { connect } from 'react-redux';
+
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
     return (
       <div className="app-wrapper">
         <header className="app-header">
-          <Header />
+          <Header />          
         </header>
 
         <article className="app-article">
