@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // ENDPOINTS
 
 //Get 5 Random articles Onload
-app.get("/api/onload",ArtCtrl.art_onload)
+app.get("/api/onload/:topics",ArtCtrl.art_onload)
 
 //Get 5 random articles based on user input
 app.get("/api/article/:topics",ArtCtrl.art_topics)
