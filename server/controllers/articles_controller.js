@@ -3,8 +3,7 @@ module.exports = {
     console.log(req);
     try {
       let db = req.app.get("db");
-      let { topics }=req.params
-      let result = await db.articles.query_topics(topics);
+      let result = await db.bpn_junction.test_bpn_query();
       res.status(200).send(result);      
     } catch (error) {
       console.log(error);
