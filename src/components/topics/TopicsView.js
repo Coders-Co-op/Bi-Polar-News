@@ -21,7 +21,6 @@ export default class Topics extends Component {
   }
   render() {
     const topicsArr = [...this.state.topicsArray];
-    let extractedInfo = '';
     let topicName = '';
     let formattedList = topicsArr.map((e, i) => {
       if (topicName !== e.topic_name) {

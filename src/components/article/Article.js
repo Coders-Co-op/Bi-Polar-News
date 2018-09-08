@@ -1,13 +1,59 @@
-var Collapse = require('rc-collapse');
-var Panel = Collapse.Panel;
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('rc-collapse/assets/index.css');
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getFiveArticles } from "../../ducks/reducer";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemTitle,
+  AccordionItemBody
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
 
-var collapse = (
-  <Collapse accordion={true}>
-    <Panel header="hello" headerClass="my-header-class">this is panel content</Panel>
-    <Panel header="title2">this is panel content2 or other</Panel>
-  </Collapse>
-);
-ReactDOM.render(collapse);
+class Article extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const newArticle = this.props.articles.map((article, i) => (
+      <div key={i}>
+        <h3> {article.title}</h3>
+        <article> {article.article_body}</article>
+      </div>
+    ));
+
+    return (
+      <div>
+        <Accordion>
+          <AccordionItem>
+            <AccordionItemTitle>
+                <h3>First Article</h3>
+            </AccordionItemTitle>
+            <AccordionItemBody>
+              <p>This is article 1</p>
+              {newArticle}
+            </AccordionItemBody>
+          </AccordionItem>
+          <AccordionItem>
+          <AccordionItemTitle>
+                <h3>Second Article</h3>
+            </AccordionItemTitle>
+            <AccordionItemBody>
+              <p>this is article 2</p>
+              {newArticle}
+            </AccordionItemBody>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  };
+}
+export default connect(
+  mapStateToProps,
+  { getFiveArticles }
+)(Article);
