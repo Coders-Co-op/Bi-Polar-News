@@ -3,7 +3,7 @@ import _ from 'lodash'
 import {articles} from "./ducks/reducer";
 import {connect} from 'react-redux';
 
-export default (content, source) => {
+function (content, source) {
     if (source === "CNN") {
         _.replace(content, "CNN", "[this news agency]");
         _.replace(content, "Fox News", "[another news agency]");
@@ -23,15 +23,8 @@ export default (content, source) => {
 }
 
 function mapStateToProps(state){
-    const {article} = state;
-    return { article }
-  }
-  export default connect(mapStateToProps, {article})()
-
-  function mapStateToProps(state) {
     return {
-      user: state.users.user
-    };
+      articles:state.articles
+    }
   }
-  
-  export default connect(mapStateToProps,{ updateUserData })(Private);
+  export default connect(mapStateToProps)(ReplaceSource)
