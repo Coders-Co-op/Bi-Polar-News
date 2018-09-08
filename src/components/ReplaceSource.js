@@ -3,7 +3,10 @@ import _ from 'lodash'
 import {articles} from "./ducks/reducer";
 import {connect} from 'react-redux';
 
-function (content, source) {
+function CnnFox() {
+    let fixedContent = articles.map(articleObj => {
+        
+    })
     if (source === "CNN") {
         _.replace(content, "CNN", "[this news agency]");
         _.replace(content, "Fox News", "[another news agency]");
@@ -27,4 +30,4 @@ function mapStateToProps(state){
       articles:state.articles
     }
   }
-  export default connect(mapStateToProps)(ReplaceSource)
+  export default connect(mapStateToProps, {CnnFox})(ReplaceSource)
