@@ -1,13 +1,28 @@
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getFiveArticles } from '../../ducks/reducer'
 
-export default class Article extends Component {
+class Article extends Component {
   render() {
-  console.log("i am props match", this.props.match);
+    const newArticle = this.props.articles.map((article, i) => (
+      <div key={i}>
+        <h3> {article.title}</h3>
+        <article> {article.article_body}</article>
+      </div>
+    ))
     return (
       <div>
-        <h1>Article</h1>
+
+        {newArticle}
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  }
+}
+export default connect(mapStateToProps, { getFiveArticles })(Article)

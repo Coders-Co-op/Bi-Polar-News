@@ -40,7 +40,7 @@ export default class Header extends Component {
             onClick={()=>this.toggleDrawer()}
             onKeyDown={()=>this.toggleDrawer()}>
             <ul>
-          <Link to="/topics"><li>Topics</li></Link>
+          <Link to="/topics-view"><li>Topics</li></Link>
           <Link to="/about"><li>About</li></Link>
           <Link to='/donate'><li>Donate</li></Link>
             </ul>
