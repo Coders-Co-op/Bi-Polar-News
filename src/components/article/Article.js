@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getFiveArticles } from '../../ducks/reducer'
 import ReplaceSource from '../ReplaceSource'
-import _ from 'lodash'
 
 class Article extends Component {
   render() {
