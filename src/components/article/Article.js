@@ -1,13 +1,29 @@
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getFiveArticles } from '../../ducks/reducer'
+import ReplaceSource from '../ReplaceSource'
+import _ from 'lodash'
 
-export default class Article extends Component {
+class Article extends Component {
   render() {
-  console.log("i am props match", this.props.match);
+    const newArticle = this.props.articles.map((article, i) => (
+      <div key={i}>
+        <h3> {article.title}</h3>
+        <article> <ReplaceSource content = {article.article_body} source = {article.source} /> </article>
+      </div>
+    ))
     return (
       <div>
-        <h1>Article</h1>
+        {newArticle}
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  }
+}
+export default connect(mapStateToProps, { getFiveArticles })(Article)
