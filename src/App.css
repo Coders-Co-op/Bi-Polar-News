@@ -14,4 +14,6 @@
 .app-footer{
   height: 12%;
   background-color:#6E5E7E;
+  display: flex;
+ justify-content: center;
 }
