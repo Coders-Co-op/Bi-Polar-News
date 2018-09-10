@@ -11,14 +11,15 @@ import { getFiveArticles } from "./ducks/reducer"
 
 class App extends Component {
   componentDidMount() {
-    const random = Math.floor(Math.random() * 2);
-    //will need to update this to make an axios call to get all topics
-    let topics = ["politics", "business", "education"]
-    let topic = topics[random];
     const {getFiveArticles} = this.props
-    axios.get(`/api/onload/${topic}`).then(res => {
-      getFiveArticles(res.data);
-    });
+    axios.get("/api/topics").then(res => {
+      let topics = res.data;
+      const random = Math.floor(Math.random() * topics.length);
+      let topic = topics[random].topic_name;
+      axios.get(`/api/onload/${topic}`).then(res => {
+        getFiveArticles(res.data);
+      });
+    })
   }
 
   render() {

@@ -1,0 +1,1 @@
+SELECT topic_name FROM topics;
