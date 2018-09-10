@@ -11,6 +11,12 @@
   background-color: aqua;
   height: 78%;
 }
+.app-article-no-footer{
+  background-color: aqua;
+  height: 90%;
+}
 .app-footer{
   height: 12%;
+  display: flex;
+  justify-content: center;
 }
