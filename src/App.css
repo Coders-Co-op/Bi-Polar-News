@@ -11,7 +11,16 @@
   background-color: #DDD6DD;
   height: 78%;
 }
+.app-article-no-footer{
+  background-color: aqua;
+  height: 90%;
+}
 .app-footer{
   height: 12%;
+<<<<<<< HEAD
+  display: flex;
+  justify-content: center;
+=======
   background-color:#6E5E7E;
+>>>>>>> master
 }

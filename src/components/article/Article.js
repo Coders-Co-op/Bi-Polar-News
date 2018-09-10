@@ -28,7 +28,7 @@ class Article extends Component {
             </AccordionItemTitle>
             <AccordionItemBody>
               <p>This is article 1</p>
-              {newArticle}
+              {newArticle[0]}
             </AccordionItemBody>
           </AccordionItem>
           <AccordionItem>
@@ -37,7 +37,7 @@ class Article extends Component {
             </AccordionItemTitle>
             <AccordionItemBody>
               <p>this is article 2</p>
-              {newArticle}
+              {newArticle[1]}
             </AccordionItemBody>
           </AccordionItem>
         </Accordion>
