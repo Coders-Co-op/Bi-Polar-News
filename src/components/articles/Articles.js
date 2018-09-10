@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getFiveArticles } from "../../ducks/reducer";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionItemTitle,
-  AccordionItemBody
-} from "react-accessible-accordion";
+  Accordion, AccordionItem, AccordionItemTitle,AccordionItemBody} from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import ReplaceSource from '../ReplaceSource'
 
