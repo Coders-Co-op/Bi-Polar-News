@@ -11,9 +11,6 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import ReplaceSource from '../ReplaceSource'
 
 class Article extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const newArticle = this.props.articles.map((article, i) => (
       <div key={i}>
