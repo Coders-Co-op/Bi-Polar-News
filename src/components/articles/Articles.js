@@ -10,7 +10,7 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 import ReplaceSource from '../ReplaceSource'
 
-class Article extends Component {
+class Articles extends Component {
   render() {
     const newArticle = this.props.articles.map((article, i) => (
       <div key={i}>
@@ -28,7 +28,7 @@ class Article extends Component {
             </AccordionItemTitle>
             <AccordionItemBody>
               <p>This is article 1</p>
-              {newArticle}
+              {newArticle[0]}
             </AccordionItemBody>
           </AccordionItem>
           <AccordionItem>
@@ -37,7 +37,7 @@ class Article extends Component {
             </AccordionItemTitle>
             <AccordionItemBody>
               <p>this is article 2</p>
-              {newArticle}
+              {newArticle[1]}
             </AccordionItemBody>
           </AccordionItem>
         </Accordion>
@@ -54,4 +54,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { getFiveArticles }
-)(Article);
+)(Articles);
