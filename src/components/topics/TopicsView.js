@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import './topics.css';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { getFiveArticles } from '../../ducks/reducer';
 
-class TopicsView extends Component {
+export default class Topics extends Component {
   constructor() {
     super()
     this.state ={
@@ -13,35 +11,23 @@ class TopicsView extends Component {
     }
   }
   componentDidMount(){    
-    let promise = axios.get('/api/alltopics')
+    let promise = axios.get('/api/topics/')
     promise.then(res => {  
       this.setState({     
         topicsArray: res.data
       })
+      console.log("Data ",this.state.topicsArray)
     })
   }
-
-  handleClick(redcat){
-    console.log("redcat = ", redcat)
-    const { getFiveArticles, history } = this.props;
-        axios.get(`/api/article/${redcat}`).then( res => { //${redcat
-          getFiveArticles(res.data)
-          console.log('res', res.data)
-          history.push('/article')
-        })
-      }
-
   render() {
     const topicsArr = [...this.state.topicsArray];
-    let extractedInfo = '';
     let topicName = '';
     let formattedList = topicsArr.map((e, i) => {
       if (topicName !== e.topic_name) {
         topicName = e.topic_name;
         return (
           <div key={ i }>
-          {console.log("topicName",topicName)}
-            <h3 onClick={() => this.handleClick(e.topic_name)}>{topicName}</h3>
+            <Link to="/articles"><h3>{topicName}</h3></Link>
           </div>
         )
       } else {
@@ -62,9 +48,3 @@ class TopicsView extends Component {
     )
   }
 }
-function mapStateToProps(state){
-  return {
-    articles:state.articles
-  }
-}
-export default connect(mapStateToProps, { getFiveArticles })(TopicsView)
