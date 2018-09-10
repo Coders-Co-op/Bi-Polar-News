@@ -53,9 +53,6 @@ class Topics extends Component {
         )
       }
     })
-    // var processOne = _.groupBy(topicsArr,"topic_name")
-    // console.log("processOne",processOne)
-
 
       return (
         <section>
