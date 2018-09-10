@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 
 export default function(props) {
-  let { content, source } = props;
+  let { content } = props;
 
   // intiate regular expressions
   let cnn = /cnn/gi;
