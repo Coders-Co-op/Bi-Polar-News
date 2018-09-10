@@ -27,6 +27,9 @@ app.get("/api/article/:topics",ArtCtrl.art_topics)
 //Get list of all topics and subtopics
 app.get("/api/alltopics",ArtCtrl.get_all_topics)
 
+//Get list of all topic names
+app.get("/api/topics",ArtCtrl.get_topic_names)
+
 //Get Poll results
 app.get('/api/poll/results',PlCtrl.poll_res)
 

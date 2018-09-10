@@ -1,6 +1,5 @@
 module.exports = {
   art_onload: async (req, res) => {
-    console.log(req);
     try {
       let db = req.app.get("db");
       let { topics }=req.params
@@ -24,6 +23,15 @@ module.exports = {
     try {
       let db = req.app.get("db");
       let result = await db.topics.get_all_topics();
+      res.status(200).send(result);      
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  get_topic_names: async (req, res) => {
+    try {
+      let db = req.app.get("db");
+      let result = await db.topics.get_topic_names();
       res.status(200).send(result);      
     } catch (error) {
       console.log(error)
