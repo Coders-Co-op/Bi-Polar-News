@@ -3,6 +3,7 @@ import axios from 'axios';
 import './topics.css';
 import {connect} from 'react-redux'
 import {getFiveArticles} from '../../ducks/reducer'
+import './topics.jpg';
 
 class Topics extends Component {
   constructor() {
@@ -19,14 +20,23 @@ class Topics extends Component {
       })
     })
   }
-  handleClick(topic){
+  handleClick(redcat){
+    console.log("redcat = ", redcat)
     const { getFiveArticles, history } = this.props;
-        axios.get(`/api/articles/${topic}`).then( res => { 
+        axios.get(`/api/article/${redcat}`).then( res => { //${redcat
           getFiveArticles(res.data)
-          history.push('/articles')
+          console.log('res', res.data)
+          history.push('/article')
         })
       }
+
+
   render() {
+
+  String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
     const topicsArr = [...this.state.topicsArray];
     let topicName = '';
     let formattedList = topicsArr.map((e, i) => {
@@ -34,22 +44,27 @@ class Topics extends Component {
         topicName = e.topic_name;
         return (
           <div key={ i }>
-            <h3 onClick={() => this.handleClick(e.topic_name)}>{topicName}</h3>  
+            <h3 onClick={() => this.handleClick(e.topic_name)}><u>{topicName.toProperCase()}</u></h3>  
           </div>
         )
       } else {
         return (
-          <div key={i}><p>{e.subtopic_name}</p></div>
+          <div key={i}><p>{e.subtopic_name.toProperCase()}</p></div>
         )
       }
     })
-    
+    // var processOne = _.groupBy(topicsArr,"topic_name")
+    // console.log("processOne",processOne)
+
 
       return (
-      <div> 
-        <h1>Topics</h1>
-        {formattedList}
-      </div>
+        <section>
+          <div className = "topics-list"> 
+            <div>
+              <h1 class="h1-style">Select a topic</h1></div>
+            <div class="topic-items">{formattedList}</div>
+          </div>
+      </section>
     )
   }
 }
