@@ -8,6 +8,7 @@ import {
   AccordionItemBody
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
+import ReplaceSource from '../ReplaceSource'
 
 class Article extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Article extends Component {
     const newArticle = this.props.articles.map((article, i) => (
       <div key={i}>
         <h3> {article.title}</h3>
-        <article> {article.article_body}</article>
+        <article> <ReplaceSource content = {article.article_body} source = {article.source} /> </article>
       </div>
     ));
 
