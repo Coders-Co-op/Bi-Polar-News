@@ -1,10 +1,8 @@
-
 section {
     background-image: url(./topics.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding:5vw;
-
 }
 
 .topics-list {
@@ -14,19 +12,20 @@ section {
     border-top:1px solid #fff;
     box-shadow: 5px 5px 10px #343224;
     display:flex;
+    justify-content: space-evenly;
     flex-direction:column;
-    align-content: center;
     align-items:center;
     background-color:#DDD6DD;
+    border-radius: 6px;
 }
 
 .h1-style {
     font-size:18pt;
-    padding:8px;
 }
     
 .topic-items {
-    line-height: 150%
+    line-height: 150%;
+    text-decoration: none;
 }
 
 h3 {
