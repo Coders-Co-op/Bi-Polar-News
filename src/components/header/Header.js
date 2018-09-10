@@ -42,6 +42,7 @@ export default class Header extends Component {
             <ul>
           <Link to="/topics-view"><li>Topics</li></Link>
           <Link to="/about"><li>About</li></Link>
+          <Link to="/articles"><li>Articles</li></Link>
           <Link to='/donate'><li>Donate</li></Link>
             </ul>
           </div>
