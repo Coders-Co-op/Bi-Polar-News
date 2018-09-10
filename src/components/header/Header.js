@@ -23,7 +23,6 @@ export default class Header extends Component {
           <img id="imge" src = {logo} alt="Liberal and Conservative News Sources Compared and Contrasted" /></Link>
         </div>
 
-        <div><h1>Compare &amp; Constrast<br />Liberal &amp; Conservative News Sources</h1></div>
 
         <div onClick={()=>this.toggleDrawer()}>
           <i class="fa fa-bars" aria-hidden="true"></i>
@@ -42,6 +41,7 @@ export default class Header extends Component {
             <ul>
           <Link to="/topics-view"><li>Topics</li></Link>
           <Link to="/about"><li>About</li></Link>
+          <Link to="/articles"><li>Articles</li></Link>
           <Link to='/donate'><li>Donate</li></Link>
             </ul>
           </div>

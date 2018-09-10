@@ -9,17 +9,15 @@ import Modal from './components/modal/Modal';
 import Slider from './components/slider/Slider';
 import Topics from './components/topics/Topics';
 import Photos from './components/photos/Photos';
-import TopicsView from "./components/topics/TopicsView";
 
 const routes = (
     <Switch>
         <Route exact path="/" component={Intro} />
-        <Route path="/article" component={Article} />
+        <Route path="/articles" component={Article} />
         <Route path="/slider" component={Slider} />
         <Route path="/modal" component={Modal} />        
         <Route path="/photos" component={Photos} />
         <Route path="/topics" component={Topics} />
-        <Route path="/topics-view" component={TopicsView} />
         <Route path="/about" component={About} />
         <Route path="/donate" component={Donate} />
 
