@@ -20,12 +20,10 @@ class Topics extends Component {
       })
     })
   }
-  handleClick(redcat){
-    console.log("redcat = ", redcat)
+  handleClick(topic){
     const { getFiveArticles, history } = this.props;
-        axios.get(`/api/article/${redcat}`).then( res => { //${redcat
+        axios.get(`/api/article/${topic}`).then( res => { 
           getFiveArticles(res.data)
-          console.log('res', res.data)
           history.push('/articles')
         })
       }
@@ -53,8 +51,7 @@ class Topics extends Component {
         )
       }
     })
-    // var processOne = _.groupBy(topicsArr,"topic_name")
-    // console.log("processOne",processOne)
+  
 
 
       return (
