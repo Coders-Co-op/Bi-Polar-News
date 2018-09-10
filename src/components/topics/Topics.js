@@ -5,7 +5,7 @@ import { getFiveArticles } from '../../ducks/reducer';
 
 
 
- class Topics extends Component {
+class Topics extends Component {
   componentDidMount(topics){
 const { getFiveArticles } = this.props;
     axios.get(`/api/article/politics`).then( res => {
@@ -15,7 +15,7 @@ const { getFiveArticles } = this.props;
   }
   render() {
 
-     return (
+      return (
       <div> 
         <h1>Topics</h1>
 
