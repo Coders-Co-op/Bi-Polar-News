@@ -8,9 +8,10 @@
   height: 10%;
 }
 .app-article{
-  background-color: aqua;
+  background-color: #DDD6DD;
   height: 78%;
 }
 .app-footer{
   height: 12%;
+  background-color:#6E5E7E;
 }
