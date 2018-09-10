@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import About from './components/about/About';
 import Articles from './components/articles/Articles';
 // import ArticlesTwo from './components/articles/ArticlesTwo';
-// import ArticleThree from './components/articles/ArticlesThree';
+// import ArticlesThree from './components/articles/ArticlesThree';
 // import ArticlesFour from './components/articles/ArticlesFour';
 // import ArticlesFive from './components/articles/ArticlesFive';
 import Donate from './components/donate/Donate';
