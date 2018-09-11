@@ -4,21 +4,6 @@ import Form from '../form/form'
 import Chart from "../chart/Chart";
 
 const modalStyles = {
-<<<<<<< HEAD
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '90%',
-    height: '80%',
-    borderRadius: '10px',
-    boxShadow: '0px 5px 3px 2px rgba(190,200,200,0.5)',
-    // background: 'linear-gradient(red,orange,yellow,blue)'
-    background: 'white'
-=======
   content:{
     top                   : '50%',
     left                  : '50%',
@@ -36,7 +21,6 @@ const modalStyles = {
   },
   overlay:{
     background            : 'rgb(216,216,216)'
->>>>>>> master
   }
 }
 
@@ -49,16 +33,10 @@ export default class Modal extends Component {
     return (
       <div>
         <ReactModal
-<<<<<<< HEAD
-          isOpen={this.props.modal}
-          onRequestClose={() => this.props.closeModal()}
-          style={modalStyles}
-=======
         isOpen={this.props.modal}
         onRequestClose={()=>this.props.closeModal()}
         style={modalStyles}
         contentLabel='modalstyle'
->>>>>>> master
         >
           <Form closeModal={() => this.props.closeModal()} />
         </ReactModal>
