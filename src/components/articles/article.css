@@ -1,0 +1,32 @@
+div > h3{
+  text-align: center
+}
+.accordion__body{
+  background: rgba(244,244,244,1);
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right:8px;
+  top:250px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.modal{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.two{
+  padding-top:20px;
+  flex-direction: row
+}
