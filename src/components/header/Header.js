@@ -18,7 +18,7 @@ export default class Header extends Component {
   }
   render() {    
     return (
-      <header className="header" style={{display:'flex', justifyContent:'space-between'}}>
+      <header style={{display:'flex', justifyContent:'space-between'}}>
         <div><Link to='/'>
           <img id="imge" src = {logo} alt="Liberal and Conservative News Sources Compared and Contrasted" /></Link>
         </div>
