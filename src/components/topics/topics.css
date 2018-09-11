@@ -1,5 +1,5 @@
 section {
-    background-image: url(./topics.jpg);
+    background-image: url(./topics4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding:5vw;
@@ -10,22 +10,25 @@ section {
     height:73vh;
     border-left:1px solid #fff;
     border-top:1px solid #fff;
-    box-shadow: 5px 5px 10px #343224;
+    /* box-shadow: 5px 5px 10px #343224; */
     display:flex;
     justify-content: space-evenly;
     flex-direction:column;
     align-items:center;
-    background-color:#DDD6DD;
+    background-color:#fff;
+    /* #DDD6DD; */
     border-radius: 6px;
 }
 
 .h1-style {
-    font-size:18pt;
+    font-size:16pt;
+    padding:4vw 4vw 0vw 4vw; 
 }
     
 .topic-items {
     line-height: 150%;
     text-decoration: none;
+    padding:4vw; 
 }
 
 h3 {
