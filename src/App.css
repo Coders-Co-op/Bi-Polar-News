@@ -1,4 +1,3 @@
-
 .app-wrapper {
   width:100vw;
   height:100vh;
@@ -12,7 +11,7 @@
   height: 78%;
 }
 .app-article-no-footer{
-  background-color: aqua;
+  background-color: rgba(216,216,216);
   height: 90%;
 }
 .app-footer{
@@ -22,4 +21,13 @@
   justify-content: center;
   background-color:#6E5E7E;
   z-index: 1;
+}
+.switch-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+  width: 100%;
 }

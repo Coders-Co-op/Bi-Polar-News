@@ -41,8 +41,7 @@ export default class Header extends Component {
             <ul>
           <Link to="/topics" style={{textDecoration:'none'}}><li>Topics</li></Link>
           <Link to="/about" style={{textDecoration:'none'}}><li>About</li></Link>
-          <Link to="/articles" style={{textDecoration:'none'}}><li>Articles</li></Link>
-          <Link to='/donate' style={{textDecoration:'none'}}><li>Donate</li></Link>
+          <Link to="/articles" style={{textDecoration:'none'}}><li>Articles</li></Link>          
             </ul>
           </div>
 
