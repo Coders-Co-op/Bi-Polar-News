@@ -1,13 +1,21 @@
 .app-wrapper {
   width:100vw;
   height:100vh;
-  background-color:#DDD6DD;
+  background-color:var(--gray);
 }
 .app-header{
   height: 10%;
 }
+
+header {
+  background-color: var(--main);
+  -webkit-box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
+-moz-box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
+box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
+}
+
 .app-article{
-  background-color: #DDD6DD;
+  background-color: var(--gray);
   height: 78%;
 }
 .app-article-no-footer{
@@ -16,11 +24,13 @@
 }
 .app-footer{
   height: 12%;
-  background-color:#6E5E7E;
   display: flex;
   justify-content: center;
-  background-color:#6E5E7E;
+  background-color:var(--main);
   z-index: 1;
+  -webkit-box-shadow: inset 0px 17px 67px -17px rgba(52,50,36,1);
+-moz-box-shadow: inset 0px 17px 67px -17px rgba(52,50,36,1);
+box-shadow: inset 0px 17px 67px -17px rgba(52,50,36,1);
 }
 .switch-wrapper {
   position: relative;
