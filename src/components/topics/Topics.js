@@ -3,7 +3,7 @@ import axios from 'axios';
 import './topics.css';
 import {connect} from 'react-redux'
 import {getFiveArticles} from '../../ducks/reducer'
-import './topics.jpg';
+import './topics4.jpg';
 
 class Topics extends Component {
   constructor() {

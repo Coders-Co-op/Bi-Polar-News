@@ -21,12 +21,14 @@ section {
 }
 
 .h1-style {
-    font-size:18pt;
+    font-size:16pt;
+    padding:4vw 4vw 0vw 4vw; 
 }
     
 .topic-items {
     line-height: 150%;
     text-decoration: none;
+    padding:4vw; 
 }
 
 h3 {
