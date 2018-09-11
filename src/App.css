@@ -1,7 +1,7 @@
 .app-wrapper {
   width:100vw;
   height:100vh;
-  background-color:var(--gray);
+  background-color:var(--lite);
 }
 .app-header{
   height: 10%;
@@ -15,9 +15,12 @@ box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
 }
 
 .card-box { 
+  /* box-sizing:border-box; */
+  /* position:fixed; */
   width:90vw;
-  height:73vh;
+  height:95%;
   padding:4px;
+  /* margin-bottom:5vh; */
   display:flex;
   justify-content: space-evenly;
   flex-direction:column;
@@ -31,7 +34,7 @@ box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
 
 
 .app-article{
-  background-color: var(--gray);
+  background-color: var(--lite);
   height: 78%;
 }
 .app-article-no-footer{
@@ -39,6 +42,8 @@ box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
   height: 90%;
 }
 .app-footer{
+  position:fixed;
+  width:100vw;
   height: 12%;
   display: flex;
   justify-content: center;

@@ -18,15 +18,25 @@ export default class Header extends Component {
   }
   render() {    
     return (
-      <header style={{display:'flex', justifyContent:'space-between'}}>
+      <header >
         <div><Link to='/'>
           <img id="imge" src = {logo} alt="Liberal and Conservative News Sources Compared and Contrasted" /></Link>
         </div>
 
+        <div className='screen-links'>
+          <ul>
+            <li><Link to="/topics" className="link-style">Topics</Link></li>
+            <li><Link to="/about" className="link-style">About</Link></li>
+            <li><Link to="/articles" className="link-style">Articles</Link></li>         
+          </ul>
+        </div>
 
-        <div onClick={()=>this.toggleDrawer()}>
+
+        <div class="toggle-drawer" 
+          onClick={()=>this.toggleDrawer()} >
           <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
+
 
         <Drawer 
           open={this.state.drawerOpen} 

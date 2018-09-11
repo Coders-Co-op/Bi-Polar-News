@@ -1,12 +1,23 @@
 :root {
   --main: #6E5E7E;
-  --gray: #DDD6DD;
+  --lite: #DDD6DD;
+  --dark: #343224;
+  --red: #E33528;
+  --blue: #195CD0;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: var(--dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100vw;
 }
 
 section { 
@@ -14,35 +25,92 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   padding:5vw;
+  height:78vh;
 }
 
 p {
-text-decoration: none;
+  text-decoration: none;
 }
+
+/* FOR SCREENS  */
+
+h1 { 
+  font-size:24pt;
+  padding:3vw 0vw 0vw 3vw; 
+  text-align: center;
+  line-height: 130%;
+}
+
+p { 
+  font-size:14pt;
+  line-height: 180%;
+  padding:0vw 8vw; 
+}
+
+.screen-links {
+  visibility: visible;
+}
+.screen-links > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.screen-links li {
+  float:right;
+  padding:0px 20px;
+}
+
+.link-style {
+  text-decoration:none;
+  font-size:14pt;
+  display: block;
+}
+.link-style:hover {
+  color:white;
+}
+
+.toggle-drawer, .headerDrawer, .fa-bars {
+  visibility: hidden;
+}
+
 
 /* For larger handhelds */
 
 @media (max-height: 799px) { 
-
+  
   h1 { 
-    font-size:16pt;
-    padding:4vw 4vw 0vw 8vw; 
+    font-size:15pt;
+    padding:4vw 4vw 0vw 7vw; 
   }
-
+  
   p { 
     line-height: 160%;
-    padding:0vw 8vw; 
+    padding:0vw 7vw; 
+    font-size:13pt;
+  }
+  
+  /* Hide the screen menu */
+
+  .screen-links, .screen-links > ul, .screen-links > li{
+    visibility: hidden;
   }
 
   /* Hamburger menu  */
-
+  
   .fa-bars {
-    padding:20px 20px 0px 0px;
-    color:white;
+    visibility: visible;
     font-size: 2rem;
+    color:var(--lite);
+    padding:5px 20px 0px 0px;
+  }
+
+  .toggle-drawer {
+    visibility: visible;
   }
 
   .headerDrawer{
+    visibility: visible;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -55,6 +123,7 @@ text-decoration: none;
   }
 
   .headerDrawer li{
+    visibility: visible;
     padding: 10px;
   }
 }
@@ -71,30 +140,13 @@ text-decoration: none;
   p { 
     line-height: 150%;
     padding:0vw 4vw; 
+    font-size:12pt;
   }
 
   /* Hamburger menu  */
 
   .fa-bars {
-    padding:20px 20px 0px 0px;
-    color:var(--gray);
-    font-size: 2rem;
-  }
-
-  .headerDrawer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 10px;
-    width: 150px;
-    height: 100%;
-    background: var(--main);
-    padding-bottom: 350px;
-    line-height:150%;
-  }
-
-  .headerDrawer li{
-    padding: 10px;
+    font-size: 1.7rem;
   }
 
 }
