@@ -14,7 +14,12 @@ const modalStyles = {
     height                : '80%',
     borderRadius          : '10px',
     boxShadow             : '0px 5px 3px 2px rgba(190,200,200,0.5)',
-    background            : 'linear-gradient(blue,red)'
+    background            : 'linear-gradient(rgba(65,105,225,.3),rgba(220,20,60,.3))',
+    border                : '2px solid rgb(130,130,130)',
+  
+  },
+  overlay:{
+    background            : 'rgb(216,216,216)'
   }
 }
 
@@ -30,6 +35,7 @@ export default class Modal extends Component {
         isOpen={this.props.modal}
         onRequestClose={()=>this.props.closeModal()}
         style={modalStyles}
+        contentLabel='modalstyle'
         >
         <Form closeModal={()=>this.props.closeModal()}/>
         </ReactModal>
