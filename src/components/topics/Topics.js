@@ -3,7 +3,7 @@ import axios from 'axios';
 import './topics.css';
 import {connect} from 'react-redux'
 import {getFiveArticles} from '../../ducks/reducer'
-import './topics4.jpg';
+// import './topics4.jpg';
 
 class Topics extends Component {
   constructor() {
@@ -12,6 +12,7 @@ class Topics extends Component {
       topicsArray: []
     }
   }
+  
   componentDidMount(){    
     let promise = axios.get('/api/alltopics')
     promise.then(res => {  
@@ -20,6 +21,7 @@ class Topics extends Component {
       })
     })
   }
+
   handleClick(redcat){
     console.log("redcat = ", redcat)
     const { getFiveArticles, history } = this.props;
@@ -56,10 +58,10 @@ class Topics extends Component {
 
       return (
         <section>
-          <div className = "topics-list"> 
+          <div className = "card-box"> 
             <div>
-              <h1 class="h1-style">Select a topic</h1></div>
-            <div class="topic-items">{formattedList}</div>
+              <h1>Select a topic</h1></div>
+            <p>{formattedList}</p>
           </div>
       </section>
     )

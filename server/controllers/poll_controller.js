@@ -34,6 +34,7 @@ module.exports = {
       mm = '0'+mm
       } 
       today = mm + '/' + dd + '/' + yyyy    
+      console.log(req.body);
       let pollPost = await db.poll.poll_insert([art1_id, art2_id, art1_res, art2_res, surprised,today]).catch(err=>console.log(err))
       res.status(201).send(pollPost)      
     } catch (error) {
