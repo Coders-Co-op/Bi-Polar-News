@@ -2,7 +2,18 @@ module.exports = {
   poll_res: async (req,res)=>{
     try {
       let db = req.app.get('db')
-      let pollData = await db.poll.poll_test_query()
+      let {art1_id, art2_id, art1_res} = req.query;
+      let pollData = await db.poll.poll_get_res([Number(art1_id), Number(art2_id), Number(art1_res)])
+      res.status(200).send(pollData)
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  poll_sur: async (req,res)=>{
+    try {
+      let db = req.app.get('db')
+      let {art1_id, art2_id} = req.query;
+      let pollData = await db.poll.poll_get_surprised([Number(art1_id), Number(art2_id)])
       res.status(200).send(pollData)
     } catch (error) {
       console.log(error)
@@ -23,6 +34,7 @@ module.exports = {
       mm = '0'+mm
       } 
       today = mm + '/' + dd + '/' + yyyy    
+      console.log(req.body);
       let pollPost = await db.poll.poll_insert([art1_id, art2_id, art1_res, art2_res, surprised,today]).catch(err=>console.log(err))
       res.status(201).send(pollPost)      
     } catch (error) {

@@ -19,14 +19,3 @@ div > h3{
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-.modal{
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-.two{
-  padding-top:20px;
-  flex-direction: row
-}

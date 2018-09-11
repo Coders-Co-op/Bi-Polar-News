@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import Form from '../form/form'
+import Chart from "../chart/Chart";
 
 const modalStyles = {
   content:{
@@ -14,13 +15,18 @@ const modalStyles = {
     height                : '80%',
     borderRadius          : '10px',
     boxShadow             : '0px 5px 3px 2px rgba(190,200,200,0.5)',
-    background            : 'linear-gradient(red,orange,yellow,blue)'
+    background            : 'linear-gradient(rgba(65,105,225,.3),rgba(220,20,60,.3))',
+    border                : '2px solid rgb(130,130,130)',
+  
+  },
+  overlay:{
+    background            : 'rgb(216,216,216)'
   }
 }
 
 
 export default class Modal extends Component {
-  componentWillMount(){
+  componentWillMount() {
     ReactModal.setAppElement('body')
   }
   render() {
@@ -30,15 +36,17 @@ export default class Modal extends Component {
         isOpen={this.props.modal}
         onRequestClose={()=>this.props.closeModal()}
         style={modalStyles}
+        contentLabel='modalstyle'
         >
-        <Form closeModal={()=>this.props.closeModal()}/>
+          <Form closeModal={() => this.props.closeModal()} />
         </ReactModal>
         <ReactModal
-        isOpen={this.props.graphModal}
-        onRequestClose={()=>this.props.closeGraphModal()}
-        style={modalStyles}
+          isOpen={this.props.graphModal}
+          onRequestClose={() => this.props.closeGraphModal()}
+          style={modalStyles}
         >
-        <h1>Graph Modal</h1>
+          <h1>Graph Modal</h1>
+          <Chart />
         </ReactModal>
       </div>
     )
