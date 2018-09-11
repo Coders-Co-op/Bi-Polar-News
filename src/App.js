@@ -4,7 +4,7 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import axios from "axios";
 import './App.css';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getFiveArticles } from "./ducks/reducer"
 
@@ -35,6 +35,9 @@ class App extends Component {
 
           <article className="app-article">
             {routes}
+            <Link to='articles'>
+              <i className='apparrow appright'></i>
+            </Link>
           </article>
 
           <footer className="app-footer">
