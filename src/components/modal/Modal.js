@@ -14,7 +14,7 @@ const modalStyles = {
     height                : '80%',
     borderRadius          : '10px',
     boxShadow             : '0px 5px 3px 2px rgba(190,200,200,0.5)',
-    background            : 'linear-gradient(red,orange,yellow,blue)'
+    background            : 'linear-gradient(blue,red)'
   }
 }
 
