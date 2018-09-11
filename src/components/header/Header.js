@@ -32,17 +32,17 @@ export default class Header extends Component {
           open={this.state.drawerOpen} 
           onClose={()=>this.toggleDrawer()}
           anchor='right'>
-
           <div
+            className='headerDrawer'
             tabIndex={0}
             role="button"
             onClick={()=>this.toggleDrawer()}
             onKeyDown={()=>this.toggleDrawer()}>
             <ul>
-          <Link to="/topics"><li>Topics</li></Link>
-          <Link to="/about"><li>About</li></Link>
-          <Link to="/articles"><li>Articles</li></Link>
-          <Link to='/donate'><li>Donate</li></Link>
+          <Link to="/topics" style={{textDecoration:'none'}}><li>Topics</li></Link>
+          <Link to="/about" style={{textDecoration:'none'}}><li>About</li></Link>
+          <Link to="/articles" style={{textDecoration:'none'}}><li>Articles</li></Link>
+          <Link to='/donate' style={{textDecoration:'none'}}><li>Donate</li></Link>
             </ul>
           </div>
 

@@ -26,7 +26,7 @@ class Topics extends Component {
         axios.get(`/api/article/${redcat}`).then( res => { //${redcat
           getFiveArticles(res.data)
           console.log('res', res.data)
-          history.push('/article')
+          history.push('/articles')
         })
       }
 
