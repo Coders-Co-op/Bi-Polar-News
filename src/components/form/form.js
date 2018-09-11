@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './form.css'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-export default class form extends Component {
+class form extends Component {
   constructor(){
     super()
     this.state = {
@@ -24,18 +26,27 @@ export default class form extends Component {
     console.log(`You have selected ${this.state.selectedOption2}`);
   }
   render() {
+    console.log(this.props.articles);
     return (
-      <div>
+      <div className='bg'>
         <form className='modal' onSubmit={(event)=> this.handleFormSubmit(event)}>
-          <h3>Which article do you feel was More Reasonable</h3>
+          <h3>Which article do you feel was More Reasonable?</h3>
           <div className='radio'>
-            <label htmlFor="article1">Article 1
+            <label htmlFor="article1">
+            Article 1
               <input name='article' value='article 1' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 1'}/>
+            {
+              this.state.selectedOption !== '' ? `${this.props.articles[0].source}` : null
+            }
             </label>
           </div>
           <div className='radio'>
-            <label htmlFor="article2">Article 2
+            <label htmlFor="article2">
+            Article 2
               <input name='article' value='article 2' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 2'}/>
+            {
+              this.state.selectedOption !== '' ? `${this.props.articles[1].source}` : null
+            }
             </label>
           </div>
           <button className='btn' type='submit'>Save</button>
@@ -70,3 +81,10 @@ export default class form extends Component {
     )
   }
 }
+function mapState(state){
+  let {articles} = state
+  return{
+    articles
+  }
+}
+export default withRouter(connect(mapState)(form))
