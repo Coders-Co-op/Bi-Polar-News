@@ -33,6 +33,9 @@ app.get("/api/topics",ArtCtrl.get_topic_names)
 //Get Poll results
 app.get('/api/poll/results',PlCtrl.poll_res)
 
+//Get Poll results for surprised
+app.get('/api/poll/results/suprised',PlCtrl.poll_sur)
+
 //Add to Poll results
 app.post('/api/poll/submit',PlCtrl.poll_submit)
 

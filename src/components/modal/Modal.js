@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import Form from '../form/form'
+import Chart from "../chart/Chart";
 
 const modalStyles = {
   content:{
@@ -25,7 +26,7 @@ const modalStyles = {
 
 
 export default class Modal extends Component {
-  componentWillMount(){
+  componentWillMount() {
     ReactModal.setAppElement('body')
   }
   render() {
@@ -37,14 +38,15 @@ export default class Modal extends Component {
         style={modalStyles}
         contentLabel='modalstyle'
         >
-        <Form closeModal={()=>this.props.closeModal()}/>
+          <Form closeModal={() => this.props.closeModal()} />
         </ReactModal>
         <ReactModal
-        isOpen={this.props.graphModal}
-        onRequestClose={()=>this.props.closeGraphModal()}
-        style={modalStyles}
+          isOpen={this.props.graphModal}
+          onRequestClose={() => this.props.closeGraphModal()}
+          style={modalStyles}
         >
-        <h1>Graph Modal</h1>
+          <h1>Graph Modal</h1>
+          <Chart />
         </ReactModal>
       </div>
     )
