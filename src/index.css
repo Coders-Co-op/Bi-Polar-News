@@ -9,17 +9,6 @@ body {
   font-family: sans-serif;
 }
 
-h1 { 
-  font-size:16pt;
-  padding:4vw 4vw 0vw 4vw; 
-}
-
-p { 
-  line-height: 150%;
-  text-decoration: none;
-  padding:0vw 4vw; 
-}
-
 section { 
   background-image: url(./images/topics4.jpg);
   background-repeat: no-repeat;
@@ -27,17 +16,85 @@ section {
   padding:5vw;
 }
 
-.card-box { 
-  width:90vw;
-  height:73vh;
-  padding:4px;
-  display:flex;
-  justify-content: space-evenly;
-  flex-direction:column;
-  align-items:center;
-  background-color:#fff;
-  border-radius: 6px;
-  -webkit-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
--moz-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
+p {
+text-decoration: none;
+}
+
+/* For larger handhelds */
+
+@media (max-height: 799px) { 
+
+  h1 { 
+    font-size:16pt;
+    padding:4vw 4vw 0vw 8vw; 
+  }
+
+  p { 
+    line-height: 160%;
+    padding:0vw 8vw; 
+  }
+
+  /* Hamburger menu  */
+
+  .fa-bars {
+    padding:20px 20px 0px 0px;
+    color:white;
+    font-size: 2rem;
+  }
+
+  .headerDrawer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+    width: 150px;
+    height: 100%;
+    background: var(--main);
+    padding-bottom: 350px;
+    line-height:150%;
+  }
+
+  .headerDrawer li{
+    padding: 10px;
+  }
+}
+
+ /* FOR up to iPhone 6/7/8 */
+
+@media (max-height: 700px) { 
+
+  h1 { 
+    font-size:16pt;
+    padding:4vw 4vw 0vw 4vw; 
+  }
+
+  p { 
+    line-height: 150%;
+    padding:0vw 4vw; 
+  }
+
+  /* Hamburger menu  */
+
+  .fa-bars {
+    padding:20px 20px 0px 0px;
+    color:var(--gray);
+    font-size: 2rem;
+  }
+
+  .headerDrawer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+    width: 150px;
+    height: 100%;
+    background: var(--main);
+    padding-bottom: 350px;
+    line-height:150%;
+  }
+
+  .headerDrawer li{
+    padding: 10px;
+  }
+
 }
