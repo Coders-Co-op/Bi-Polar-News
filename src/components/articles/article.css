@@ -12,8 +12,8 @@ div > h3{
   width: 15px;
   height: 15px;
   position: absolute;
-  right:8px;
-  top:250px;
+  right: 5px;
+  top: 250px;
 }
 .right {
   transform: rotate(-45deg);
