@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
+
 class form extends Component {
   constructor(){
     super()
@@ -53,8 +54,10 @@ class form extends Component {
           <h3>Which article do you feel was More Reasonable?</h3>
           <div className='radio'>
             <label htmlFor="article1">
-            Article 1
-              <input name='article' value='article 1' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 1'}/>
+              <p>
+                {this.props.articles[0].title}<br/>
+              </p> 
+              <input className='center' name='article' value='article 1' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 1'}/>
             {
               this.state.selectedOption !== '' ? `${articles[indexArt1].source}` : null
             }
@@ -62,8 +65,10 @@ class form extends Component {
           </div>
           <div className='radio'>
             <label htmlFor="article2">
-            Article 2
-              <input name='article' value='article 2' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 2'}/>
+            <p>
+              {this.props.articles[1].title}<br/>         
+            </p>
+              <input className='center' name='article' value='article 2' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 2'}/>
             {
               this.state.selectedOption !== '' ? `${articles[indexArt2].source}` : null
             }

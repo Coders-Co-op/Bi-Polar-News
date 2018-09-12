@@ -34,8 +34,11 @@ class Articles extends Component {
     this.setState({ modal: false })
     this.openGraphModal()
   }
-  openGraphModal() {
-    this.setState({ graphModal: true })
+  closeSingleModal(){
+    this.setState({modal:false})
+  }
+  openGraphModal(){
+    this.setState({graphModal:true})
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
@@ -79,6 +82,7 @@ class Articles extends Component {
             closeModal={() => this.closeModal()}
             graphModal={this.state.graphModal}
             closeGraphModal={() => this.closeGraphModal()}
+            closeSingleModal={()=>this.closeSingleModal()}
           />
         </div>
       ) : null
