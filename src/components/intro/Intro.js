@@ -1,7 +1,8 @@
 
 import React from 'react';
 import './intro.css'
-
+import liberal from '../../images/liberal-news-sources.png'
+import conservative from '../../images/conservative-news-sources.png'
 
 export default () => {
   return (
@@ -9,8 +10,8 @@ export default () => {
       <div className="card-box">
 
         <div className="rflex">
-          <figure className="desktop-left">
-            <img src='../images/liberal-and-conservative-news-sources.png' width='200' height='300' />
+          <figure>
+            <img className="desktop-left" src={liberal} />
           </figure>
           <div>
             <h1>Compare &amp; Contrast<br />
@@ -19,8 +20,8 @@ export default () => {
 
           <p>This app presents you with two articles on major news topics, one from a premier conservative news source and the other from a premier liberal news source. The BiPolar News lets you read and compare, with an eye out for biased reporting. </p>
           </div>
-          <figure className="desktop-right">
-            <img src='../images/liberal-and-conservative-news-sources.png' width='200' height='300' />
+          <figure >
+            <img className="desktop-right" src={conservative} />
           </figure>
         </div>
 

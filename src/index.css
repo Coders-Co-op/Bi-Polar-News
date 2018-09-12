@@ -71,8 +71,9 @@ p {
 }
 
 
-figure {
-  border:1px solid red;
+figure>img {
+  width:196px;
+  height:300px;
 }
 
 .toggle-drawer, .headerDrawer, .fa-bars {
@@ -97,7 +98,7 @@ figure {
   
   /* Hide the screen items on handhelds */
 
-  figure, .screen-links, .screen-links > ul, .screen-links > li{
+  figure>img, .screen-links, .screen-links > ul, .screen-links > li{
     visibility: hidden;
     width:1px;
   }
