@@ -42,6 +42,8 @@ class Articles extends Component {
   }
   render() {
     const { articles } = this.props;
+    let indexArt1 = Math.floor(Math.random() * 2);
+    let indexArt2 = indexArt1 === 0 ? 1 : 0;
     const newArticle = articles
       .map((article, i) => (
         <div key={i}>
@@ -56,18 +58,18 @@ class Articles extends Component {
           <Accordion>
             <AccordionItem>
               <AccordionItemTitle>
-                <h3>{articles[0].title}</h3>
+                <h3>{articles[indexArt1].title}</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
-                {newArticle[0]}
+                {newArticle[indexArt1]}
               </AccordionItemBody>
             </AccordionItem>
             <AccordionItem expanded>
               <AccordionItemTitle>
-                <h3>{articles[1].title}</h3>
+                <h3>{articles[indexArt2].title}</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
-                {newArticle[1]}
+                {newArticle[indexArt2]}
               </AccordionItemBody>
             </AccordionItem>
           </Accordion>
