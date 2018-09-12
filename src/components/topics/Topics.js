@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import './topics.css';
 import {connect} from 'react-redux'
-import {getFiveArticles} from '../../ducks/reducer'
-// import './topics4.jpg';
+import {getFiveArticles} from '../../ducks/reducer';
+
+
+
 
 class Topics extends Component {
   constructor() {
@@ -61,7 +63,16 @@ class Topics extends Component {
           <div className = "card-box"> 
             <div>
               <h1>Select a topic</h1></div>
-            <p>{formattedList}</p>
+            {/* <p>{formattedList}</p> */}
+            <div className="topics-wrapper">
+            <div className="politics-wrap"> Politics</div>
+            <div className="legal-wrap"> Legal</div>
+            <div className="business-wrap"> Business</div>
+            <div className="education-wrap"> Education</div>
+            <div className="social-wrap">Social </div>
+            
+            </div>
+
           </div>
       </section>
     )
