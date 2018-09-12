@@ -90,6 +90,9 @@ class Chart extends Component {
                         }
                     }}
                 />
+                <div>
+                    <button>Next Article</button>
+                </div>
             </div>
         )
     }

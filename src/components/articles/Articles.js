@@ -25,8 +25,11 @@ class Articles extends Component {
     this.setState({ modal: false })
     this.openGraphModal()
   }
-  openGraphModal() {
-    this.setState({ graphModal: true })
+  closeSingleModal(){
+    this.setState({modal:false})
+  }
+  openGraphModal(){
+    this.setState({graphModal:true})
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
@@ -52,18 +55,20 @@ class Articles extends Component {
               {newArticle[0]}
             </AccordionItemBody>
           </AccordionItem>
-          <AccordionItem>
-            <AccordionItemTitle>
-              <h3>{articles[1].title}</h3>
+          <AccordionItem expanded={true}>
+          <AccordionItemTitle>
+                <h3>Second Article</h3>
             </AccordionItemTitle>
             <AccordionItemBody>
               {newArticle[1]}
             </AccordionItemBody>
           </AccordionItem>
         </Accordion>
-        <Modal
-          modal={this.state.modal}
-          closeModal={() => this.closeModal()}
+
+        <Modal 
+          modal={this.state.modal} 
+          closeModal={()=>this.closeModal()}
+          closeSingleModal={()=>this.closeSingleModal()}
           graphModal={this.state.graphModal}
           closeGraphModal={() => this.closeGraphModal()}
         />

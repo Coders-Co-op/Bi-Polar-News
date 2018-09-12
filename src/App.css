@@ -78,3 +78,7 @@ box-shadow: inset 0px 17px 67px -17px rgba(52,50,36,1);
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+.appright:hover{
+  transform: scale(3) rotate(-45deg);
+  margin-right: 20px;
+}

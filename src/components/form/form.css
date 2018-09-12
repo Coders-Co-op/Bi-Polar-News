@@ -31,3 +31,6 @@ button{
   background:rgba(216,216,216,.7);
   border-radius: 4px;
 }
+.center{
+  margin: 0 auto
+}
