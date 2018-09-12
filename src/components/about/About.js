@@ -1,14 +1,18 @@
 import React from 'react'
 import './about.css'
+import aboutsean from '../../images/aboutsean.jpg'
+import aboutrachel from '../../images/aboutrachel.jpg'
+import aboutjesse from '../../images/aboutjesse.jpg'
 
 export default () => {
   return (
     <div>
     <div className='wrapper'>
+    <div className="card-box">
     <h3>About Our Team</h3>
       <div className="member">
         <div className='row'>
-        <img src="https://via.placeholder.com/100x100" alt=""/>
+        <img src={aboutsean} alt="" className='leftshadow'/>
         <h3>Sean</h3>
         </div>
         <div className='floatright'>
@@ -17,33 +21,34 @@ export default () => {
       </div>
       <div className="member rowright">
         <div className='row'>
-        <img src="https://via.placeholder.com/100x100" alt=""/>
-        <h3>Sean</h3>
+        <img src={aboutrachel} alt="" className='righshadow'/>
+        <h3>Rachel</h3>
         </div>
         <div className='floatright'>
-          <p>My Name is Sean I am a web dev living in spanish fork utah, I enjoy the outdoors</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta expedita quidem.</p>
         </div>
       </div>
       <div className="member">
         <div className='row'>
-        <img src="https://via.placeholder.com/100x100" alt=""/>
-        <h3>Sean</h3>
+        <img src={aboutjesse} alt="" className='leftshadow'/>
+        <h3>Jesse</h3>
         </div>
         <div className='floatright'>
-          <p>My Name is Sean I am a web dev living in spanish fork utah, I enjoy the outdoors</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta expedita quidem.</p>
         </div>
       </div>
       <div className="member rowright">
         <div className='row'>
-        <img src="https://via.placeholder.com/100x100" alt=""/>
-        <h3>Sean</h3>
+        <img src="https://via.placeholder.com/100x100" alt="" className='righshadow'/>
+        <h3>Greg</h3>
         </div>
         <div className='floatright'>
-          <p>My Name is Sean I am a web dev living in spanish fork utah, I enjoy the outdoors</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta expedita quidem.</p>
         </div>
       </div>
     </div>
     <div>
+    </div>
     </div>
     </div>
   )

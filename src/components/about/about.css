@@ -9,9 +9,6 @@
 .member{
   width: 90%;
   height: 20%;
-  background: rgb(130,130,130);
-  border-radius: 4px;
-  box-shadow: 1px 1px 1px black;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -33,4 +30,22 @@
 }
 .rowright{
   flex-direction: row-reverse
+}
+img{
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+}
+p{
+  font-size: 14px;
+}
+.righshadow{
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.22);
+  -moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.22);
+}
+.leftshadow{
+  -webkit-box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
+  -moz-box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
+  box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
 }
