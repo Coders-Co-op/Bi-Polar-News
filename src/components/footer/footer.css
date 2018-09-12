@@ -9,3 +9,7 @@
 a:visited {
     color: var(--lite);
 }
+.fa:hover{
+    color:white;
+    transform: scale(2)
+}

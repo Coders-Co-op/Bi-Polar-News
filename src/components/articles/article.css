@@ -19,3 +19,7 @@ div > h3{
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+.right:hover{
+  transform: scale(3) rotate(-45deg);
+  margin-right: 20px;
+}
