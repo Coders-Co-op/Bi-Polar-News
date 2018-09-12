@@ -9,8 +9,42 @@ import {
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import ReplaceSource from '../ReplaceSource';
+import Modal from '../modal/Modal'
+import './article.css'
+import axios from 'axios'
 
 class ArticlesTwo extends Component {
+  constructor() {
+    super()
+    this.state = {
+      modal: false,
+      graphModal: false
+    }
+  }
+  componentDidMount() {
+    const { articles, getFiveArticles } = this.props;
+    if (articles.length === 0) {
+      axios.get("/api/onload").then(res => {
+        getFiveArticles(res.data);
+      });
+    }
+  }
+  openModal() {
+    this.setState({ modal: true })
+  }
+  closeModal() {
+    this.setState({ modal: false })
+    this.openGraphModal()
+  }
+  closeSingleModal(){
+    this.setState({modal:false})
+  }
+  openGraphModal(){
+    this.setState({graphModal:true})
+  }
+  closeGraphModal() {
+    this.setState({ graphModal: false })
+  }
   render() {
     const newArticle = this.props.articles.map((article, i) => (
       <div key={i}>

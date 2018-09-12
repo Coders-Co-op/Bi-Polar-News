@@ -14,9 +14,12 @@
   align-items: center;
   flex-direction: row;
 }
-.member>img{
+.member img{
   margin-top: 10px;
   margin-left: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
 }
 .rightimg{
   float: right;
@@ -30,11 +33,6 @@
 }
 .rowright{
   flex-direction: row-reverse
-}
-img{
-  width: 100px;
-  height: 100px;
-  border-radius: 3px;
 }
 p{
   font-size: 14px;

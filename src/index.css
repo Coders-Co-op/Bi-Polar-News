@@ -70,14 +70,28 @@ p {
   color:white;
 }
 
+
+figure>img {
+  width:196px;
+  height:300px;
+}
+
 .toggle-drawer, .headerDrawer, .fa-bars {
   visibility: hidden;
 }
-
+#imge{
+  padding-left: 89px;
+  border-radius: 4px;
+}
 
 /* For larger handhelds */
 
 @media (max-height: 799px) { 
+  #imge {
+    height: 9vh;
+    border-radius: 3px;
+    padding-left: 22px
+  }
   
   h1 { 
     font-size:15pt;
@@ -90,10 +104,11 @@ p {
     font-size:13pt;
   }
   
-  /* Hide the screen menu */
+  /* Hide the screen items on handhelds */
 
-  .screen-links, .screen-links > ul, .screen-links > li{
+  figure>img, .screen-links, .screen-links > ul, .screen-links > li{
     visibility: hidden;
+    width:1px;
   }
 
   /* Hamburger menu  */
@@ -131,7 +146,11 @@ p {
  /* FOR up to iPhone 6/7/8 */
 
 @media (max-height: 700px) { 
-
+  #imge {
+    height: 9vh;
+    border-radius: 3px;
+    padding-left: 19px
+  }
   h1 { 
     font-size:16pt;
     padding:4vw 4vw 0vw 4vw; 
