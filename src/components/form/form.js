@@ -14,11 +14,12 @@ class form extends Component {
     }
   }
   addToPollData(){
+    let { articles, indexArt1, indexArt2 } = this.props;
     if(this.state.selectedOption !== '' && this.state.selectedOption2 !== ''){
       let {selectedOption, selectedOption2} = this.state
       let surprised = selectedOption2
-      let art1_id = this.props.articles[0].id
-      let art2_id = this.props.articles[1].id
+      let art1_id = articles[indexArt1].id
+      let art2_id = articles[indexArt2].id
       if(selectedOption === 'article 1'){
         const art1_res = 1
         const art2_res = 0
@@ -46,11 +47,11 @@ class form extends Component {
     console.log(`You have selected ${this.state.selectedOption2}`);
   }
   render() {
-    
+    let { articles, indexArt1, indexArt2 } = this.props;
     return (
       <div className='bg'>
         <form className='modal' onSubmit={(event)=> this.handleFormSubmit(event)}>
-          <h3>Which article do you feel was More Reasonable?</h3>
+          <h3 className='margintop'>Which article do you feel was More Reasonable?</h3>
           <div className='radio'>
             <label htmlFor="article1">
               <p>
@@ -58,7 +59,11 @@ class form extends Component {
               </p> 
               <input className='center' name='article' value='article 1' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 1'}/>
             {
-              this.state.selectedOption !== '' ? `${this.props.articles[0].source}` : null
+              this.state.selectedOption !== '' ? 
+              <h3 className='source'>
+              News Source: {articles[indexArt1].source}
+              </h3> 
+                : null
             }
             </label>
           </div>
@@ -69,7 +74,11 @@ class form extends Component {
             </p>
               <input className='center' name='article' value='article 2' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 2'}/>
             {
-              this.state.selectedOption !== '' ? `${this.props.articles[1].source}` : null
+              this.state.selectedOption !== '' ? 
+              <h3 className='source'>
+              News Source:{articles[indexArt2].source}
+              </h3>
+              : null
             }
             </label>
           </div>
@@ -77,8 +86,8 @@ class form extends Component {
               this.state.selectedOption !== '' 
               ? 
               (<div className='center'>
-                <h3>Surprised?</h3>
-                <div className='radio'>
+                <h3 className='fontweight'>Does the new source you selected surprise you?</h3>
+                <div className='radio' id='radiopad'>
                   <label htmlFor="yes">Yes
                     <input name='yesorno' value='true' type="radio" onChange={(event)=>this.handleRadio2(event)} checked={this.state.selectedOption2 === 'true'}/>
                   </label>
@@ -88,22 +97,23 @@ class form extends Component {
                     <input name='yesorno' value='false' type="radio" onChange={(event)=>this.handleRadio2(event)} checked={this.state.selectedOption2 === 'false'}/>
                   </label>
                 </div>
-                <button type='submit' onClick={()=>this.addToPollData()}>Save</button>
+                <button className='btn' type='submit' onClick={()=>this.addToPollData()}>Vote</button>
               </div>)
               :null
             }
             </form>
             <div className='center'>
-              <button onClick={()=>this.props.closeModal()}>View Graph</button>
+              <button onClick={()=>this.props.closeModal()}>View Votes</button>
             </div>
       </div>
     )
   }
 }
-function mapState(state){
-  let {articles} = state
-  return{
-    articles
-  }
+function mapStateToProps(state) {
+  return {
+    articles: state.articles,
+    indexArt1: state.indexArt1,
+    indexArt2: state.indexArt2
+  };
 }
-export default withRouter(connect(mapState)(form))
+export default withRouter(connect(mapStateToProps)(form))

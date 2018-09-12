@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // ENDPOINTS
 
-//Get 5 Random articles Onload
-app.get("/api/onload/:topics",ArtCtrl.art_onload)
+//Get 5 articles, random topic, onload
+app.get("/api/onload",ArtCtrl.art_onload)
 
 //Get 5 random articles based on user input
 app.get("/api/article/:topics",ArtCtrl.art_topics)
@@ -28,7 +28,7 @@ app.get("/api/article/:topics",ArtCtrl.art_topics)
 app.get("/api/alltopics",ArtCtrl.get_all_topics)
 
 //Get list of all topic names
-app.get("/api/topics",ArtCtrl.get_topic_names)
+// app.get("/api/topics",ArtCtrl.get_topic_names)
 
 //Get Poll results
 app.get('/api/poll/results',PlCtrl.poll_res)

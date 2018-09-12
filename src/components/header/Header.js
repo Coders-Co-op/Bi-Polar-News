@@ -32,7 +32,7 @@ export default class Header extends Component {
         </div>
 
 
-        <div class="toggle-drawer" 
+        <div className="toggle-drawer" 
           onClick={()=>this.toggleDrawer()} >
           <i className="fa fa-bars" aria-hidden="true"></i>
         </div>

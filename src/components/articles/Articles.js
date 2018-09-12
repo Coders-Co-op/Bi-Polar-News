@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
-import { getFiveArticles } from "../../ducks/reducer";
+import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
 import {
   Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody
 } from "react-accessible-accordion";
@@ -16,6 +17,14 @@ class Articles extends Component {
     this.state = {
       modal: false,
       graphModal: false
+    }
+  }
+  componentDidMount() {
+    const { articles, getFiveArticles } = this.props;
+    if (articles.length === 0) {
+      axios.get("/api/onload").then(res => {
+        getFiveArticles(res.data);
+      });
     }
   }
   openModal() {
@@ -35,7 +44,10 @@ class Articles extends Component {
     this.setState({ graphModal: false })
   }
   render() {
-    const { articles } = this.props;
+    const { articles, indexArt1, indexArt2, updateIndexArt1AndIndexArt2 } = this.props;
+    let index1 = Math.floor(Math.random() * 2);
+    let index2 = index1 === 0 ? 1 : 0;
+    updateIndexArt1AndIndexArt2(index1, index2);
     const newArticle = articles
       .map((article, i) => (
         <div key={i}>
@@ -44,45 +56,48 @@ class Articles extends Component {
       ));
 
     return (
-      <div className='accordian_style'>
-        <i className='arrow right' onClick={() => this.openModal()}></i>
-        <Accordion>
-          <AccordionItem>
-            <AccordionItemTitle>
-              <h3>{articles[0].title}</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              {newArticle[0]}
-            </AccordionItemBody>
-          </AccordionItem>
-          <AccordionItem expanded={true}>
-          <AccordionItemTitle>
-                <h3>Second Article</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              {newArticle[1]}
-            </AccordionItemBody>
-          </AccordionItem>
-        </Accordion>
-
-        <Modal 
-          modal={this.state.modal} 
-          closeModal={()=>this.closeModal()}
-          closeSingleModal={()=>this.closeSingleModal()}
-          graphModal={this.state.graphModal}
-          closeGraphModal={() => this.closeGraphModal()}
-        />
-      </div>
+      articles[0] ? (
+        <div className='accordian_style'>
+          <i className='arrow right' onClick={() => this.openModal()}></i>
+          <Accordion>
+            <AccordionItem transition={2000}>
+              <AccordionItemTitle>
+                <h3>{articles[indexArt1].title}</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                {newArticle[indexArt1]}
+              </AccordionItemBody>
+            </AccordionItem>
+            <AccordionItem expanded>
+              <AccordionItemTitle>
+                <h3>{articles[indexArt2].title}</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                {newArticle[indexArt2]}
+              </AccordionItemBody>
+            </AccordionItem>
+          </Accordion>
+          <Modal
+            modal={this.state.modal}
+            closeModal={() => this.closeModal()}
+            graphModal={this.state.graphModal}
+            closeGraphModal={() => this.closeGraphModal()}
+            closeSingleModal={()=>this.closeSingleModal()}
+          />
+        </div>
+      ) : null
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    articles: state.articles
+    articles: state.articles,
+    indexArt1: state.indexArt1,
+    indexArt2: state.indexArt2
   };
 }
 export default connect(
   mapStateToProps,
-  { getFiveArticles }
+  { getFiveArticles, updateIndexArt1AndIndexArt2 }
 )(Articles);
