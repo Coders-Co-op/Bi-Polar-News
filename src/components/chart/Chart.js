@@ -26,7 +26,11 @@ class Chart extends Component {
                 })
                 this.setState({
                     chartData: {
-                        labels: [articles[0].source, articles[1].source, "Surprised"],
+                        labels: [
+                            `# Who Voted ${articles[0].source} More Reasonable`,
+                            `# Who Voted ${articles[1].source} More Reasonable`,
+                            "# Surprised By News Source"
+                        ],
                         datasets: [
                             {
                                 label: "Votes for Articles",
@@ -34,7 +38,7 @@ class Chart extends Component {
                                     this.state.art1Count,
                                     this.state.art2Count,
                                     this.state.surprisedCount,
-                                    0
+
                                 ],
                                 backgroundColor: [
                                     articles[0].source.includes("CNN") ? 'rgba(54, 162, 235, 0.6)' : 'rgba(255, 99, 132, 0.6)',
@@ -45,7 +49,7 @@ class Chart extends Component {
                                 borderWidth: 1,
                                 hoverBorderWidth: 3,
                                 borderColor: 'grey',
-                                hoverBorderColor: 'black'
+                                hoverBorderColor: 'black',
                             }
                         ]
                     },
@@ -56,8 +60,7 @@ class Chart extends Component {
                                     beginAtZero: true
                                 }
                             }]
-                        }
-
+                        }       
                     }
                 })
             })
@@ -80,13 +83,14 @@ class Chart extends Component {
                         maintainAspectRatio: false,
                         title: {
                             display: this.props.displayTitle,
-                            text: "Votes for Articles",
-                            fontSize: 20,
+                            text: "The Results Are In...",
+                            fontSize: 30,
                             fontColor: "black"
                         },
                         legend: {
-                            dispaly: this.props.displayLegend,
-                            position: this.props.legendPosition
+                            display: this.props.displayLegend,
+                            position: this.props.legendPosition,
+
                         }
                     }}
                 />
