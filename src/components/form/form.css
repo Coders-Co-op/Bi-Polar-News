@@ -5,15 +5,20 @@
   align-items: center;
   flex-direction: column;
 }
-.two{
-  padding-top:20px;
-  flex-direction: row
-}
 .center{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  padding-top: 90px;
+  padding-top: 5px;
+  text-align: center
+}
+.fontweight{
+  font-weight: bold
+}
+.radio{
+  padding-bottom: 2px;
+  padding-top: 2px;
 }
 .btn{
   margin-top: 20px;
@@ -33,4 +38,24 @@ button{
 }
 .center{
   margin: 0 auto
+}
+.margintop{
+  margin-top: -50px;
+  text-align: center;
+  font-weight: bold;
+}
+.source{
+  text-align: center;
+  margin-top: 5px;
+  
+}
+.radio p{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.btn{
+  margin-bottom: 8px;
+}
+#radiopad{
+  padding-top: 10px
 }

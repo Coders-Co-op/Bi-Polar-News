@@ -60,7 +60,7 @@ class Articles extends Component {
         <div className='accordian_style'>
           <i className='arrow right' onClick={() => this.openModal()}></i>
           <Accordion>
-            <AccordionItem>
+            <AccordionItem transition={2000}>
               <AccordionItemTitle>
                 <h3>{articles[indexArt1].title}</h3>
               </AccordionItemTitle>
