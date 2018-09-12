@@ -3,4 +3,94 @@
 h3:hover {
     cursor: pointer;
 }
+.topics-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: 1.5rem;
+    padding: 2px;
+    border-radius: 2px;
+    /* color: red; */
 
+
+}
+.topics-wrapper h3{
+    float: right;
+    margin: 5px;
+    
+}
+.politics-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    float: right;
+    color: white;
+    background: url(../../images/politics-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+
+
+    
+}
+
+.legal-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(../../images/legal-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+    color: white;
+
+
+
+}
+.education-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(../../images/education-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+
+
+}
+.business-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(../../images/business-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+
+
+}
+.social-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(../../images/social-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+
+}
+/* @media(min-width: 768px){
+    .topics-wrapper{
+        width: 100%;
+        background: purple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .topic-wrap{
+        height:75px;
+        margin: 3px;
+        width: 300px;
+        background: url(../../images/politicsabrahamlincoln.jpg);
+    }
+
+  } */
