@@ -9,6 +9,9 @@
 a:visited {
     color: var(--lite);
 }
+.fa{
+    color:white
+}
 .fa:hover{
     color:white;
     transform: scale(2)
