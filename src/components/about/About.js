@@ -3,6 +3,7 @@ import './about.css'
 import aboutsean from '../../images/aboutsean.jpg'
 import aboutrachel from '../../images/aboutrachel.jpg'
 import aboutjesse from '../../images/aboutjesse.jpg'
+import aboutgreg from '../../images/aboutgreg.JPG'
 
 export default () => {
   return (
@@ -39,7 +40,7 @@ export default () => {
       </div>
       <div className="member rowright">
         <div className='row'>
-        <img src="https://via.placeholder.com/100x100" alt="" className='righshadow'/>
+        <img src={aboutgreg} alt="" className='righshadow'/>
         <h3>Greg</h3>
         </div>
         <div className='floatright'>
