@@ -9,16 +9,20 @@ h3:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font: 1.5rem;
+    font-size: 1.3rem;
     padding: 2px;
-    border-radius: 2px;
-    /* color: red; */
+    margin: 1px;
+    border-radius: 3px;
+    font-weight: 600;
 
 
 }
+.formatted-list{
+    width: 100%;
+}
 .topics-wrapper h3{
     float: right;
-    margin: 5px;
+    margin: 1rem;
     
 }
 .politics-wrap{
@@ -76,21 +80,90 @@ h3:hover {
     border-radius: 2px;
 
 }
-/* @media(min-width: 768px){
+@media(min-width: 700px){
     .topics-wrapper{
-        width: 100%;
-        background: purple;
+        width: 300px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        height: 196px;
+        font-size: 1.3rem;
+        padding: 2px;
+        margin: 1px;
+        border-radius: 3px;
+        font-weight: 600;
+    
     
     }
-    .topic-wrap{
-        height:75px;
+    .formatted-list{
+        height: 100%;
+        width: 80%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        
+        
+    }
+    .topics-wrapper h3{
+        float: right;
+        margin: 1rem;
+        
+    }
+    .politics-wrap{
+        height:190px;
         margin: 3px;
         width: 300px;
-        background: url(../../images/politicsabrahamlincoln.jpg);
+        float: right;
+        color: white;
+        background: url(../../images/politics-desktop.jpg);
+        padding: 2px;
+        border-radius: 2px;
+    
+    
+        
+    }
+    
+    .legal-wrap{
+        height:190px;
+        margin: 3px;
+        width: 300px;
+        background: url(../../images/legal-desktop.jpg);
+        padding: 2px;
+        border-radius: 3px;
+        color: white;
+    
+    
+    
+    }
+    .education-wrap{
+        height:190px;
+        margin: 3px;
+        width: 300px;
+        background: url(../../images/education-desktop.jpg);
+        padding: 2px;
+        border-radius: 2px;
+    
+    
+    }
+    .business-wrap{
+        height:190px;
+        margin: 3px;
+        width: 300px;
+        background: url(../../images/business-desktop.jpg);
+        padding: 2px;
+        border-radius: 2px;
+    
+    
+    }
+    .social-wrap{
+        height:190px;
+        margin: 3px;
+        width: 300px;
+        background: url(../../images/social-desktop.jpg);
+        padding: 2px;
+        border-radius: 2px;
+        
+    
     }
 
-  } */
+  }

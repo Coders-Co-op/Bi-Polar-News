@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import { Bar, Pie } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 import { connect } from "react-redux";
 
 class Chart extends Component {
