@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getFiveArticles } from "../../ducks/reducer";
+import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
 import {
   Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody
 } from "react-accessible-accordion";
@@ -41,9 +41,10 @@ class Articles extends Component {
     this.setState({ graphModal: false })
   }
   render() {
-    const { articles } = this.props;
-    let indexArt1 = Math.floor(Math.random() * 2);
-    let indexArt2 = indexArt1 === 0 ? 1 : 0;
+    const { articles, indexArt1, indexArt2, updateIndexArt1AndIndexArt2 } = this.props;
+    let index1 = Math.floor(Math.random() * 2);
+    let index2 = index1 === 0 ? 1 : 0;
+    updateIndexArt1AndIndexArt2(index1, index2);
     const newArticle = articles
       .map((article, i) => (
         <div key={i}>
@@ -87,10 +88,12 @@ class Articles extends Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.articles
+    articles: state.articles,
+    indexArt1: state.indexArt1,
+    indexArt2: state.indexArt2
   };
 }
 export default connect(
   mapStateToProps,
-  { getFiveArticles }
+  { getFiveArticles, updateIndexArt1AndIndexArt2 }
 )(Articles);

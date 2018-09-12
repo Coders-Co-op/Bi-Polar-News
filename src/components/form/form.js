@@ -13,11 +13,12 @@ class form extends Component {
     }
   }
   addToPollData(){
+    let { articles, indexArt1, indexArt2 } = this.props;
     if(this.state.selectedOption !== '' && this.state.selectedOption2 !== ''){
       let {selectedOption, selectedOption2} = this.state
       let surprised = selectedOption2
-      let art1_id = this.props.articles[0].id
-      let art2_id = this.props.articles[1].id
+      let art1_id = articles[indexArt1].id
+      let art2_id = articles[indexArt2].id
       if(selectedOption === 'article 1'){
         const art1_res = 1
         const art2_res = 0
@@ -45,7 +46,7 @@ class form extends Component {
     console.log(`You have selected ${this.state.selectedOption2}`);
   }
   render() {
-    
+    let { articles, indexArt1, indexArt2 } = this.props;
     return (
       <div className='bg'>
         <form className='modal' onSubmit={(event)=> this.handleFormSubmit(event)}>
@@ -55,7 +56,7 @@ class form extends Component {
             Article 1
               <input name='article' value='article 1' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 1'}/>
             {
-              this.state.selectedOption !== '' ? `${this.props.articles[0].source}` : null
+              this.state.selectedOption !== '' ? `${articles[indexArt1].source}` : null
             }
             </label>
           </div>
@@ -64,7 +65,7 @@ class form extends Component {
             Article 2
               <input name='article' value='article 2' type="radio" onChange={(event)=>this.handleRadio(event)} checked={this.state.selectedOption === 'article 2'}/>
             {
-              this.state.selectedOption !== '' ? `${this.props.articles[1].source}` : null
+              this.state.selectedOption !== '' ? `${articles[indexArt2].source}` : null
             }
             </label>
           </div>
@@ -95,10 +96,11 @@ class form extends Component {
     )
   }
 }
-function mapState(state){
-  let {articles} = state
-  return{
-    articles
-  }
+function mapStateToProps(state) {
+  return {
+    articles: state.articles,
+    indexArt1: state.indexArt1,
+    indexArt2: state.indexArt2
+  };
 }
-export default withRouter(connect(mapState)(form))
+export default withRouter(connect(mapStateToProps)(form))
