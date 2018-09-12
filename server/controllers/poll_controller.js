@@ -2,19 +2,16 @@ module.exports = {
   poll_res: async (req,res)=>{
     try {
       let db = req.app.get('db')
-      let {art1_id, art2_id, art1_res} = req.query;
-      let pollData = await db.poll.poll_get_res([Number(art1_id), Number(art2_id), Number(art1_res)])
-      res.status(200).send(pollData)
-    } catch (error) {
-      console.log(error)
-    }
-  },
-  poll_sur: async (req,res)=>{
-    try {
-      let db = req.app.get('db')
       let {art1_id, art2_id} = req.query;
-      let pollData = await db.poll.poll_get_surprised([Number(art1_id), Number(art2_id)])
-      res.status(200).send(pollData)
+      let art1ReasonableCount = await db.poll.poll_get_res([Number(art1_id), Number(art2_id), 1])
+      let art2ReasonableCount = await db.poll.poll_get_res([Number(art1_id), Number(art2_id), 0])
+      let overallSurprisedCount = await db.poll.poll_get_surprised([Number(art1_id), Number(art2_id)])
+      let counts = {
+        art1Count : Number(art1ReasonableCount[0].count),
+        art2Count : Number(art2ReasonableCount[0].count),
+        surprisedCount: Number(overallSurprisedCount[0].count)
+      }
+      res.status(200).send(counts)
     } catch (error) {
       console.log(error)
     }
