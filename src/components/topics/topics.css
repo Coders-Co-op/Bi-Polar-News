@@ -5,7 +5,6 @@ h3:hover {
 }
 .topics-wrapper{
     width: 100%;
-    background: pink;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,8 +12,14 @@ h3:hover {
     font: 1.5rem;
     padding: 2px;
     border-radius: 2px;
+    /* color: red; */
 
 
+}
+.topics-wrapper h3{
+    float: right;
+    margin: 5px;
+    
 }
 .politics-wrap{
     height:75px;
@@ -22,7 +27,6 @@ h3:hover {
     width: 300px;
     float: right;
     color: white;
-    background: peru;
     background: url(../../images/politics-mobile.jpg);
     padding: 2px;
     border-radius: 2px;
@@ -30,6 +34,7 @@ h3:hover {
 
     
 }
+
 .legal-wrap{
     height:75px;
     margin: 3px;
@@ -37,6 +42,8 @@ h3:hover {
     background: url(../../images/legal-mobile.jpg);
     padding: 2px;
     border-radius: 2px;
+    color: white;
+
 
 
 }

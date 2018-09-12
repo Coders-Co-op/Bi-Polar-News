@@ -47,31 +47,28 @@ class Topics extends Component {
       if (topicName !== e.topic_name) {
         topicName = e.topic_name;
         return (
-          <div key={ i }>
-            <h3 onClick={() => this.handleClick(e.topic_name)}><u>{topicName.toProperCase()}</u></h3>  
+          <div className="topics-wrapper"key={ i }>
+             <div className={e.topic_name==="politics"? "politics-wrap": e.topic_name==="legal"? "legal-wrap": e.topic_name==="business"? "business-wrap": e.topic_name==="education"? "education-wrap": "social-wrap"}onClick={() => this.handleClick(e.topic_name)}><h3> {topicName.toProperCase()}</h3></div> 
           </div>
         )
       } else {
-        return (
-          <div key={i}><p>{e.subtopic_name.toProperCase()}</p></div>
-        )
+        return null        
       }
     })
 
       return (
         <section>
           <div className = "card-box"> 
-            <div>
-              <h1>Select a topic</h1></div>
-            {/* <p>{formattedList}</p> */}
-            <div className="topics-wrapper">
+           
+            <div>{formattedList}</div>
+            {/* <div className="topics-wrapper">
             <div className="politics-wrap"> Politics</div>
             <div className="legal-wrap"> Legal</div>
             <div className="business-wrap"> Business</div>
             <div className="education-wrap"> Education</div>
             <div className="social-wrap">Social </div>
             
-            </div>
+            </div> */}
 
           </div>
       </section>
