@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 import { getFiveArticles } from "../../ducks/reducer";
 import {
@@ -16,6 +17,14 @@ class Articles extends Component {
     this.state = {
       modal: false,
       graphModal: false
+    }
+  }
+  componentDidMount() {
+    const { articles, getFiveArticles } = this.props;
+    if (articles.length === 0) {
+      axios.get("/api/onload").then(res => {
+        getFiveArticles(res.data);
+      });
     }
   }
   openModal() {
@@ -41,33 +50,35 @@ class Articles extends Component {
       ));
 
     return (
-      <div className='accordian_style'>
-        <i className='arrow right' onClick={() => this.openModal()}></i>
-        <Accordion>
-          <AccordionItem>
-            <AccordionItemTitle>
-              <h3>{articles[0].title}</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              {newArticle[0]}
-            </AccordionItemBody>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionItemTitle>
-              <h3>{articles[1].title}</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              {newArticle[1]}
-            </AccordionItemBody>
-          </AccordionItem>
-        </Accordion>
-        <Modal
-          modal={this.state.modal}
-          closeModal={() => this.closeModal()}
-          graphModal={this.state.graphModal}
-          closeGraphModal={() => this.closeGraphModal()}
-        />
-      </div>
+      articles[0] ? (
+        <div className='accordian_style'>
+          <i className='arrow right' onClick={() => this.openModal()}></i>
+          <Accordion>
+            <AccordionItem>
+              <AccordionItemTitle>
+                <h3>{articles[0].title}</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                {newArticle[0]}
+              </AccordionItemBody>
+            </AccordionItem>
+            <AccordionItem expanded>
+              <AccordionItemTitle>
+                <h3>{articles[1].title}</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                {newArticle[1]}
+              </AccordionItemBody>
+            </AccordionItem>
+          </Accordion>
+          <Modal
+            modal={this.state.modal}
+            closeModal={() => this.closeModal()}
+            graphModal={this.state.graphModal}
+            closeGraphModal={() => this.closeGraphModal()}
+          />
+        </div>
+      ) : null
     );
   }
 }
