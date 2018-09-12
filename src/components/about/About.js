@@ -26,7 +26,7 @@ export default () => {
         <h3>Rachel</h3>
         </div>
         <div className='floatright'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta expedita quidem.</p>
+          <p>Full Stack Javascript Developer excited to create problem solving Applications</p>
         </div>
       </div>
       <div className="member">
