@@ -70,6 +70,11 @@ p {
   color:white;
 }
 
+
+figure {
+  border:1px solid red;
+}
+
 .toggle-drawer, .headerDrawer, .fa-bars {
   visibility: hidden;
 }
@@ -90,10 +95,11 @@ p {
     font-size:13pt;
   }
   
-  /* Hide the screen menu */
+  /* Hide the screen items on handhelds */
 
-  .screen-links, .screen-links > ul, .screen-links > li{
+  figure, .screen-links, .screen-links > ul, .screen-links > li{
     visibility: hidden;
+    width:1px;
   }
 
   /* Hamburger menu  */
