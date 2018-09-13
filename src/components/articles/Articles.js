@@ -3,7 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import { connect } from "react-redux";
 import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
-import {Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody} from "react-accessible-accordion";
+import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import CarouselSlider from "react-carousel-slider";
 import ReplaceSource from '../ReplaceSource';
@@ -86,7 +86,7 @@ class Articles extends Component {
 
       article.article_body = paragraphs.map((newParagraph, i) => {
         return (
-          <p key={i} style={{marginBottom: "10px"}}>{newParagraph}</p>
+          <p key={i} style={{ marginBottom: "10px" }}>{newParagraph}</p>
         );
       });
 
@@ -104,31 +104,30 @@ class Articles extends Component {
           <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
         </div>
       ));
-      let data = [
-        {
-            imgSrc: rach
-        },
-        {
-            imgSrc: logo
-        },
-        {
-            imgSrc: jes
-        },
-        {
-            imgSrc: sean
-        },
-        {
-            imgSrc: greg
-        }
+    let data = [
+      {
+        imgSrc: rach
+      },
+      {
+        imgSrc: logo
+      },
+      {
+        imgSrc: jes
+      },
+      {
+        imgSrc: sean
+      },
+      {
+        imgSrc: greg
+      }
     ];
     let sliderBoxStyle = {
       height: "90px",
       width: "1099px",
-      background: "transparent",
-      border: "1px solid #e1e4e8"
+      background: "transparent"
     };
-    
-    
+
+
     // const newArticle = articles
     //   .map((article, i) => (
     // <div key={i}>
@@ -139,40 +138,51 @@ class Articles extends Component {
     return (
       articles[0] ? (
 
-        <div className="overall-wrapper"> 
-        <div className="carousel-style"> Carousel
-        <CarouselSlider slideItems = {data} sliderBoxStyle={sliderBoxStyle}/>
-        </div>
-        <div className='accordion_style'>
-        <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
-        <div className="alt">Read both articles and share which is more reasonable.</div>
-          <i className='arrow right' onClick={() => this.openModal()}></i>
-          <Accordion>
-            <AccordionItem transition={2000}>
-              <AccordionItemTitle>
-                <h3>{articles[indexArt1].title}</h3>
-              </AccordionItemTitle>
-              <AccordionItemBody>
-                {articles[indexArt1].article_body}
-              </AccordionItemBody>
-            </AccordionItem>
-            <AccordionItem expanded>
-              <AccordionItemTitle>
-                <h3>{articles[indexArt2].title}</h3>
-              </AccordionItemTitle>
-              <AccordionItemBody>
-                {articles[indexArt2].article_body}
-              </AccordionItemBody>
-            </AccordionItem>
-          </Accordion>
-          <Modal
-            modal={this.state.modal}
-            closeModal={() => this.closeModal()}
-            graphModal={this.state.graphModal}
-            closeGraphModal={() => this.closeGraphModal()}
-            closeSingleModal={() => this.closeSingleModal()}
-          />
-        </div>
+        <div className="overall-wrapper">
+          <div className="carousel-style">
+            <CarouselSlider
+              slideItems={data}
+              sliderBoxStyle={sliderBoxStyle}
+              accEle={{
+                button: false
+              }}
+              manner={{
+                autoSliding: {
+                  interval: "5s"
+                }
+              }}
+            />
+          </div>
+          <div className='accordion_style'>
+            <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
+            <div className="alt">Read both articles and share which is more reasonable.</div>
+            <i className='arrow right' onClick={() => this.openModal()}></i>
+            <Accordion>
+              <AccordionItem transition={2000}>
+                <AccordionItemTitle>
+                  <h3>{articles[indexArt1].title}</h3>
+                </AccordionItemTitle>
+                <AccordionItemBody>
+                  {articles[indexArt1].article_body}
+                </AccordionItemBody>
+              </AccordionItem>
+              <AccordionItem expanded>
+                <AccordionItemTitle>
+                  <h3>{articles[indexArt2].title}</h3>
+                </AccordionItemTitle>
+                <AccordionItemBody>
+                  {articles[indexArt2].article_body}
+                </AccordionItemBody>
+              </AccordionItem>
+            </Accordion>
+            <Modal
+              modal={this.state.modal}
+              closeModal={() => this.closeModal()}
+              graphModal={this.state.graphModal}
+              closeGraphModal={() => this.closeGraphModal()}
+              closeSingleModal={() => this.closeSingleModal()}
+            />
+          </div>
         </div>
       ) : null
     );
