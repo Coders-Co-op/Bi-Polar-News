@@ -47,7 +47,7 @@ summary {
   /* background: pink; */
   margin: 0 auto;
   position: relative;
-
+}
 /* For handhelds */
 
 @media (max-height: 799px) { 
@@ -66,4 +66,4 @@ summary {
    padding:2px 0px 4px 0px;
    height:12pt;
   }
-  }
+}
