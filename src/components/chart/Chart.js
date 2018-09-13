@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import { Bar, Pie } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom'
 
 class Chart extends Component {
     constructor() {
@@ -90,12 +91,18 @@ class Chart extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition,
+                            labels:{
+                                fontColor: 'black',
+                                fontSize: 20
+                            }
 
                         }
                     }}
                 />
                 <div>
-                    <button>Next Article</button>
+                    <Link to='/articles-2'>
+                        <button>Next Article</button>
+                    </Link>
                 </div>
             </div>
         )

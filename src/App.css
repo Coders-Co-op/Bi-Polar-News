@@ -15,12 +15,9 @@ box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
 }
 
 .card-box { 
-  /* box-sizing:border-box; */
-  /* position:fixed; */
   width:90vw;
-  height:95%;
+  height:96%;
   padding:4px;
-  /* margin-bottom:5vh; */
   display:flex;
   justify-content: space-evenly;
   flex-direction:column;
