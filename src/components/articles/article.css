@@ -37,6 +37,16 @@ summary {
   transform: scale(3) rotate(-45deg);
   margin-right: 20px;
 }
+.overall-wrapper{
+  height: 100%;
+  width: 100%;
+}
+.carousel-style{
+  height: 140px;
+  width: 100%;
+  /* background: pink; */
+  margin: 0 auto;
+  position: relative;
 
 /* For handhelds */
 
@@ -56,4 +66,4 @@ summary {
    padding:2px 0px 4px 0px;
    height:12pt;
   }
-}
+  }
