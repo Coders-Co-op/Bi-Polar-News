@@ -1,3 +1,11 @@
+
+p {
+  line-height:130%;
+  text-indent: 0px;
+  padding:0px 10px 0px 40px;
+  font-size: 14px;
+}
+
 .wrapper{
   display: flex;
   justify-content: space-evenly;
@@ -7,12 +15,13 @@
   height: 75vh;
 }
 .member{
-  width: 90%;
+  width: 60%;
   height: 20%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+  margin-right:7px;
 }
 .member img{
   margin-top: 10px;
@@ -20,6 +29,10 @@
   width: 100px;
   height: 100px;
   border-radius: 3px;
+}
+
+.member h3 {
+  font-size:10pt;
 }
 .rightimg{
   float: right;
@@ -34,9 +47,6 @@
 .rowright{
   flex-direction: row-reverse
 }
-p{
-  font-size: 14px;
-}
 .righshadow{
   -webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.22);
   -moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.22);
@@ -46,4 +56,26 @@ p{
   -webkit-box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
   -moz-box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
   box-shadow: -5px 5px 5px 1px rgba(0,0,0,0.22);
+}
+
+/* For handhelds */
+
+@media (max-height: 799px) { 
+  
+  h1 {
+    font-size:14pt;
+    padding-top:0px;
+  }
+  
+  .member{
+    width: 90%;
+  }
+
+  p {
+    line-height:130%;
+    padding:10px 10px;
+  }
+
+  
+
 }
