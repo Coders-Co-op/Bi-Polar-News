@@ -1,6 +1,12 @@
 div > h3{
   text-align: center
 }
+
+summary {
+  font-size:10pt;
+  text-align:center;
+  padding:3px 0px 4px 0px;
+}
 .accordion__body{
   background: rgba(244,244,244,1);
 }
@@ -23,3 +29,4 @@ div > h3{
   transform: scale(3) rotate(-45deg);
   margin-right: 20px;
 }
+

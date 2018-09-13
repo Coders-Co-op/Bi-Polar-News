@@ -101,6 +101,7 @@ class Articles extends Component {
     return (
       articles[0] ? (
         <div className='accordian_style'>
+          <summary>Read both articles and share which is more reasonable.</summary>
           <i className='arrow right' onClick={() => this.openModal()}></i>
           <Accordion>
             <AccordionItem transition={2000}>
