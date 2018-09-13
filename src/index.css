@@ -46,6 +46,7 @@ p {
   line-height: 180%;
   padding:0vw 8vw; 
   text-indent: 12px;
+  padding-bottom:5px;
 }
 
 i {
@@ -74,7 +75,6 @@ i {
 .link-style:hover {
   color:white;
 }
-
 
 figure>img {
   width:196px;
@@ -107,6 +107,7 @@ figure>img {
     line-height: 160%;
     padding:0vw 7vw; 
     font-size:13pt;
+    text-indent: 12px;
   }
   
   /* Hide the screen items on handhelds */
@@ -165,6 +166,7 @@ figure>img {
     line-height: 150%;
     padding:0vw 4vw; 
     font-size:12pt;
+    text-indent: 10x;
   }
 
   /* Hamburger menu  */

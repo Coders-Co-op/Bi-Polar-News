@@ -138,11 +138,14 @@ class Articles extends Component {
 
     return (
       articles[0] ? (
+
         <div className="overall-wrapper"> 
         <div className="carousel-style"> Carousel
         <CarouselSlider slideItems = {data} sliderBoxStyle={sliderBoxStyle}/>
         </div>
         <div className='accordion_style'>
+        <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
+        <div className="alt">Read both articles and share which is more reasonable.</div>
           <i className='arrow right' onClick={() => this.openModal()}></i>
           <Accordion>
             <AccordionItem transition={2000}>

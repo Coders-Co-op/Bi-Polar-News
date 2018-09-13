@@ -1,10 +1,11 @@
 
-p {
+/* p {
   line-height:130%;
-  text-indent: 0px;
+  text-indent: 12px;
   padding:0px 10px 0px 40px;
-  font-size: 14px;
-}
+  font-size: 14pt;
+
+} */
 
 .wrapper{
   display: flex;
@@ -75,7 +76,27 @@ p {
     line-height:130%;
     padding:10px 10px;
   }
+}
 
+
+/* For Galaxy S5 */
+
+@media (max-height: 700px) { 
   
-
+  h1 {
+    font-size:12pt;
+    padding-top:-4px;
+  }
+  
+  .member img{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 3px;
+  }
+  p {
+    line-height:120%;
+    padding:10px 10px;
+  }
 }
