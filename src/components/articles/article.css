@@ -27,7 +27,7 @@ summary {
   height: 15px;
   position: absolute;
   right: 5px;
-  top: 250px;
+  top: 360px;
 }
 .right {
   transform: rotate(-45deg);
@@ -45,9 +45,10 @@ summary {
   height: 140px;
   width: 100%;
   /* background: pink; */
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   position: relative;
 }
+
 /* For handhelds */
 
 @media (max-height: 799px) { 
@@ -64,6 +65,11 @@ summary {
    font-size:10pt;
    text-align:center;
    padding:2px 0px 4px 0px;
-   height:12pt;
+   height:24pt;
+  margin-top: -20px;
+  }
+
+  .arrow {
+    top: 200px;
   }
 }
