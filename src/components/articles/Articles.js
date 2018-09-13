@@ -3,13 +3,20 @@ import axios from "axios";
 import _ from "lodash";
 import { connect } from "react-redux";
 import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
-import {
-  Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody
-} from "react-accessible-accordion";
+import {Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody} from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
-import ReplaceSource from '../ReplaceSource'
-import Modal from '../modal/Modal'
-import './article.css'
+import CarouselSlider from "react-carousel-slider";
+import ReplaceSource from '../ReplaceSource';
+import Modal from '../modal/Modal';
+import './article.css';
+import logo from '../../images/liberal-and-conservative-news-sources.png';
+import rach from '../../images/aboutrachel.jpg';
+import jes from '../../images/aboutjesse.jpg';
+import sean from '../../images/aboutsean.jpg';
+import greg from '../../images/aboutgreg.JPG';
+// import {BrowserRouter as Router, Link } from 'react-router-dom';
+
+
 
 
 class Articles extends Component {
@@ -91,6 +98,37 @@ class Articles extends Component {
     let index1 = Math.floor(Math.random() * 2);
     let index2 = index1 === 0 ? 1 : 0;
     updateIndexArt1AndIndexArt2(index1, index2);
+    const newArticle = articles
+      .map((article, i) => (
+        <div key={i}>
+          <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
+        </div>
+      ));
+      let data = [
+        {
+            imgSrc: rach
+        },
+        {
+            imgSrc: logo
+        },
+        {
+            imgSrc: jes
+        },
+        {
+            imgSrc: sean
+        },
+        {
+            imgSrc: greg
+        }
+    ];
+    let sliderBoxStyle = {
+      height: "90px",
+      width: "1099px",
+      background: "transparent",
+      border: "1px solid #e1e4e8"
+    };
+    
+    
     // const newArticle = articles
     //   .map((article, i) => (
     // <div key={i}>
@@ -100,7 +138,11 @@ class Articles extends Component {
 
     return (
       articles[0] ? (
-        <div className='accordian_style'>
+        <div className="overall-wrapper"> 
+        <div className="carousel-style"> Carousel
+        <CarouselSlider slideItems = {data} sliderBoxStyle={sliderBoxStyle}/>
+        </div>
+        <div className='accordion_style'>
           <i className='arrow right' onClick={() => this.openModal()}></i>
           <Accordion>
             <AccordionItem transition={2000}>
@@ -127,6 +169,7 @@ class Articles extends Component {
             closeGraphModal={() => this.closeGraphModal()}
             closeSingleModal={() => this.closeSingleModal()}
           />
+        </div>
         </div>
       ) : null
     );

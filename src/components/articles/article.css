@@ -23,3 +23,15 @@ div > h3{
   transform: scale(3) rotate(-45deg);
   margin-right: 20px;
 }
+.overall-wrapper{
+  height: 100%;
+  width: 100%;
+}
+.carousel-style{
+  height: 140px;
+  width: 100%;
+  /* background: pink; */
+  margin: 0 auto;
+  position: relative;
+
+}
