@@ -80,7 +80,7 @@ class Articles extends Component {
     ];
     let sliderBoxStyle = {
       height: "90px",
-      width: "500px",
+      width: "1099px",
       background: "transparent",
       border: "1px solid #e1e4e8"
     };
