@@ -49,7 +49,7 @@ class Articles extends Component {
     // intiate regular expressions
     let cnn = /cnn/gi;
     let fox = /foxnews|fox news|fox/gi;
-    let readyArticleForParagraphs = /(\.\.\.|\?|!|\.)$/
+    let readyArticleForParagraphs = /[^mr|mrs|usa|us|sen](\.\.\.|\?|!|\.)$/
     articles.forEach(article => {
       let { article_body } = article;
 
@@ -79,7 +79,7 @@ class Articles extends Component {
 
       article.article_body = paragraphs.map((newParagraph, i) => {
         return (
-          <p key={i}>{newParagraph}</p>
+          <p key={i} style={{marginBottom: "10px"}}>{newParagraph}</p>
         );
       });
 
