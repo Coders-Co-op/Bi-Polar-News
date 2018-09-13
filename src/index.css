@@ -36,7 +36,7 @@ p {
 
 h1 { 
   font-size:24pt;
-  padding:3vw 0vw 0vw 3vw; 
+  padding:0vw 0vw 2vw 3vw; 
   text-align: center;
   line-height: 130%;
 }
@@ -45,6 +45,11 @@ p {
   font-size:14pt;
   line-height: 180%;
   padding:0vw 8vw; 
+  text-indent: 12px;
+}
+
+i {
+  font-style:italic;
 }
 
 .screen-links {
