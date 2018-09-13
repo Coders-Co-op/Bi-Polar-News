@@ -29,7 +29,6 @@ class Topics extends Component {
     const { getFiveArticles, history } = this.props;
         axios.get(`/api/article/${redcat}`).then( res => { //${redcat
           getFiveArticles(res.data)
-          console.log('res', res.data)
           history.push('/articles')
         })
       }
