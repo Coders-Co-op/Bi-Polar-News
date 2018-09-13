@@ -91,6 +91,10 @@ class Chart extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition,
+                            labels:{
+                                fontColor: 'black',
+                                fontSize: 20
+                            }
 
                         }
                     }}
