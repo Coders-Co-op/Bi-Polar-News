@@ -15,7 +15,7 @@ p {
   height: 75vh;
 }
 .member{
-  width: 60%;
+  width: 50%;
   height: 20%;
   display: flex;
   justify-content: space-evenly;
