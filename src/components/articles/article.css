@@ -25,9 +25,9 @@ summary {
   padding: 3px;
   width: 15px;
   height: 15px;
-  position: absolute;
+  position: fixed;
   right: 5px;
-  top: 360px;
+  top: 440px;
 }
 .right {
   transform: rotate(-45deg);
@@ -41,8 +41,8 @@ summary {
   height: 100%;
   width: 100%;
 }
-.carousel-style{
-  height: 140px;
+.slider-style{
+  height: 40px;
   width: 100%;
   /* background: pink; */
   margin: 10px auto 0 auto;
@@ -70,6 +70,10 @@ summary {
   }
 
   .arrow {
-    top: 200px;
+    top: 240px;
+  }
+
+  .slider-style{
+    width: 300px;
   }
 }
