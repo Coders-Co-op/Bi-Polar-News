@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:100vw;
+  width:100%;
 }
 
 section { 
@@ -54,6 +54,7 @@ i {
 
 .screen-links {
   visibility: visible;
+  margin-right: 250px;
 }
 .screen-links > ul {
   list-style-type: none;
@@ -64,6 +65,9 @@ i {
 .screen-links li {
   float:right;
   padding:0px 20px;
+}
+.screen-links a{
+  color:#DDD6DD
 }
 
 .link-style {
@@ -133,12 +137,11 @@ figure>img {
     visibility: visible;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    padding-top: 10px;
+    align-items: flex-start;
+    padding-top: 250px;
     width: 150px;
     height: 100%;
     background: var(--main);
-    padding-bottom: 350px;
     line-height:150%;
   }
 

@@ -1,6 +1,20 @@
 div > h3{
   text-align: center
 }
+
+summary {
+  font-size:14pt;
+  text-align:center;
+  padding:18px 0px 8px 0px;
+}
+
+.alt {
+  visibility: hidden;
+  height:0px;
+  /* font-size:0pt; */
+  padding:0px;
+}
+
 .accordion__body{
   background: rgba(244,244,244,1);
 }
@@ -11,9 +25,9 @@ div > h3{
   padding: 3px;
   width: 15px;
   height: 15px;
-  position: absolute;
+  position: fixed;
   right: 5px;
-  top: 250px;
+  top: 440px;
 }
 .right {
   transform: rotate(-45deg);
@@ -27,11 +41,39 @@ div > h3{
   height: 100%;
   width: 100%;
 }
-.carousel-style{
-  height: 140px;
+.slider-style{
+  height: 40px;
   width: 100%;
   /* background: pink; */
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   position: relative;
+}
 
+/* For handhelds */
+
+@media (max-height: 799px) { 
+  
+  summary {
+    visibility: hidden;
+    height:0px;
+    font-size: 0px;
+    padding:0px;
+  }
+
+  .alt {
+   visibility: visible;
+   font-size:10pt;
+   text-align:center;
+   padding:2px 0px 4px 0px;
+   height:24pt;
+  margin-top: -20px;
+  }
+
+  .arrow {
+    top: 240px;
+  }
+
+  .slider-style{
+    width: 300px;
+  }
 }
