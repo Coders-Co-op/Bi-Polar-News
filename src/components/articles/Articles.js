@@ -121,12 +121,28 @@ class Articles extends Component {
         imgSrc: greg
       }
     ];
-    let sliderBoxStyle = {
-      height: "90px",
-      width: "1099px",
-      background: "transparent"
-    };
-
+    const breakPoints = {
+      desktop: 1040, 
+      phone:540
+    }
+    let sliderBoxStyle = {};
+    if(window.innerWidth > breakPoints.desktop){
+      //desktop
+      sliderBoxStyle = {
+        height: "90px",
+        width: "1099px",
+        background: "transparent"
+      }
+    } else if(window.innerWidth <= breakPoints.phone){
+      //Phone
+      sliderBoxStyle = {
+        width:'380px',
+        marginBottom:'40px',
+        marginTop:'20px',
+        height:'80px',
+        background:'transparent'
+      }
+    }
 
     // const newArticle = articles
     //   .map((article, i) => (
