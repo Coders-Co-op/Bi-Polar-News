@@ -1,4 +1,4 @@
-const { getFiveArticles, getFiveRandomArticles } = require('../logic/logic');
+const { getFiveArticles, getFiveRandomArticles, replaceTest, splitTest, testForTitle, testForBody, testForSource } = require('../logic/logic');
 
 
 describe(" can get articles from server", () => {
@@ -76,7 +76,7 @@ describe(" can get articles from server", () => {
 
 })
 
-describe.only("Can get five sets of articles based on random topic", () => {
+describe("Can get five sets of articles based on random topic", () => {
     const random = Math.floor(Math.random() * 2);
     let topics = ["politics", "business", "education"]
     let topic = topics[random];
@@ -110,4 +110,41 @@ describe.only("Can get five sets of articles based on random topic", () => {
         })
     });
 
+})
+
+describe.only('Test for replaceTest Method',()=>{
+    let cnn = /cnn/gi;
+    let fox = /foxnews|fox news|fox/gi;
+    let article = {
+        title:'',
+        article_body:'fox news and Cnn suck', 
+        source:''
+    }
+    let article2 = {
+        title:'',
+        article_body:replaceTest(article,cnn,fox), 
+        source:''
+    }
+    
+        test('Can replace CNN and Fox as news Source',()=>{
+            expect(replaceTest(article, cnn, fox )).toEqual('[news agency] and [news agency] suck')
+        })
+        test('Can turn articles into single words',()=>{
+            expect(Array.isArray(splitTest(article))).toBe(true)
+        })
+        test('Articles split top equal an array of words',()=>{
+            expect(splitTest(article)).toEqual(['fox','news', 'and','Cnn','suck'])
+        })
+        test('Can replace items and create an array',()=>{
+            expect(splitTest(article2)).toEqual(['[news','agency]','and','[news','agency]','suck'])
+        })
+        test('Test title',()=>{
+            expect(testForTitle(article)).toBe(true)
+        })
+        test('Test body',()=>{
+            expect(testForBody(article)).toBe(true)
+        })
+        test('Test source',()=>{
+            expect(testForSource(article)).toBe(true)
+        })
 })
