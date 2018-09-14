@@ -25,9 +25,8 @@ class Topics extends Component {
   }
 
   handleClick(redcat){
-    console.log("redcat = ", redcat)
     const { getFiveArticles, history } = this.props;
-        axios.get(`/api/article/${redcat}`).then( res => { //${redcat
+        axios.get(`/api/article/${redcat}`).then( res => {
           getFiveArticles(res.data)
           history.push('/articles')
         })
@@ -58,7 +57,6 @@ class Topics extends Component {
       return (
         <section>
           <div className = "card-box"> 
-           
             <div className="formatted-list">{formattedList}</div>
           
 
