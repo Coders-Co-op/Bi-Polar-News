@@ -50,6 +50,12 @@ class Articles extends Component {
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
+    const { indexArt1, indexArt2 ,updateIndexArt1AndIndexArt2 } = this.props;    
+    let index1 = indexArt1;
+    let index2 = indexArt2;
+    index1 += 2
+    index2 += 2
+    updateIndexArt1AndIndexArt2(index1, index2);
   }
   styleArticles(articles) {
     const { getFiveArticles } = this.props;
@@ -94,16 +100,13 @@ class Articles extends Component {
     getFiveArticles(articles);
   }
   render() {
-    const { articles, indexArt1, indexArt2, updateIndexArt1AndIndexArt2 } = this.props;
-    let index1 = Math.floor(Math.random() * 2);
-    let index2 = index1 === 0 ? 1 : 0;
-    updateIndexArt1AndIndexArt2(index1, index2);
-    const newArticle = articles
-      .map((article, i) => (
-        <div key={i}>
-          <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
-        </div>
-      ));
+    let {articles,indexArt1, indexArt2} = this.props
+    // const newArticle = articles
+    //   .map((article, i) => (
+    //     <div key={i}>
+    //       <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
+    //     </div>
+    //   ));
     let data = [
       {
         imgSrc: rach
@@ -172,7 +175,7 @@ class Articles extends Component {
           <div className='accordion_style'>
             <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
             <div className="alt">Read both articles and share which is more reasonable.</div>
-            <i className='arrow right' onClick={() => this.openModal()}></i>
+            <i className='arrow right' onClick={() => this.openModal()}></i>            
             <Accordion>
               <AccordionItem transition={2000}>
                 <AccordionItemTitle>
