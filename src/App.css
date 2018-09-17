@@ -14,20 +14,7 @@ header {
 box-shadow: inset 0px -20px 67px -17px rgba(52,50,36,1);
 }
 
-.card-box { 
-  width:90vw;
-  height:97%;
-  padding:4px;
-  display:flex;
-  justify-content: space-evenly;
-  flex-direction:column;
-  align-items:center;
-  background-color:#fff;
-  border-radius: 6px;
-  -webkit-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
--moz-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
-}
+
 
 
 .app-article{

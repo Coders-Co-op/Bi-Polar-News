@@ -1,6 +1,4 @@
-
 import React from 'react';
-import './intro.css'
 import liberal from '../../images/liberal-news-sources.png'
 import conservative from '../../images/conservative-news-sources.png'
 

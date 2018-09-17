@@ -1,179 +1,410 @@
-:root {
-  --main: #6E5E7E;
-  --lite: #DDD6DD;
-  --dark: #343224;
-  --red: #E33528;
-  --blue: #195CD0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: var(--dark);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width:100%;
-}
-
-section { 
-  background-image: url(./images/topics4.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding:5vw;
-  height:78vh;
-}
-
-p {
-  text-decoration: none;
-}
-
-/* FOR SCREENS  */
-
-h1 { 
-  font-size:24pt;
-  padding:0vw 0vw 2vw 3vw; 
-  text-align: center;
-  line-height: 130%;
-}
-
-p { 
-  font-size:14pt;
-  line-height: 180%;
-  padding:0vw 8vw; 
-  text-indent: 12px;
-}
-
-i {
-  font-style:italic;
-}
-
-.screen-links {
-  visibility: visible;
-  margin-right: 250px;
-}
-.screen-links > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-.screen-links li {
-  float:right;
-  padding:0px 20px;
-}
-.screen-links a{
-  color:#DDD6DD
-}
-
-.link-style {
-  text-decoration:none;
-  font-size:14pt;
-  display: block;
-}
-.link-style:hover {
-  color:white;
-}
-
-
-figure>img {
-  width:196px;
-  height:300px;
-}
-
-.toggle-drawer, .headerDrawer, .fa-bars {
-  visibility: hidden;
-}
-#imge{
-  padding-left: 89px;
-  border-radius: 4px;
-}
-
-/* For larger handhelds */
-
-@media (max-height: 799px) { 
-  #imge {
-    height: 9vh;
-    border-radius: 3px;
-    padding-left: 22px
+/* CSS BASE */
+  :root {
+    --main: #6E5E7E;
+    --lite: #DDD6DD;
+    --dark: #343224;
+    --red: #E33528;
+    --blue: #195CD0;
   }
-  
-  h1 { 
-    font-size:15pt;
-    padding:4vw 4vw 0vw 7vw; 
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* color: var(--dark); */
+    color: rgba(85, 85, 85, 1.0);
   }
-  
-  p { 
-    line-height: 160%;
-    padding:0vw 7vw; 
-    font-size:13pt;
-  }
-  
-  /* Hide the screen items on handhelds */
-
-  figure>img, .screen-links, .screen-links > ul, .screen-links > li{
-    visibility: hidden;
-    width:1px;
-  }
-
-  /* Hamburger menu  */
-  
-  .fa-bars {
-    visibility: visible;
-    font-size: 2rem;
-    color:var(--lite);
-    padding:5px 20px 0px 0px;
-  }
-
-  .toggle-drawer {
-    visibility: visible;
-  }
-
-  .headerDrawer{
-    visibility: visible;
+  header {
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding-top: 250px;
-    width: 150px;
-    height: 100%;
-    background: var(--main);
-    line-height:150%;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+  }
+  section { 
+    background-image: url(./images/topics4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:5vw;
+    height:78vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pragati Narrow', sans-serif;
+    color: rgba(51, 51, 51, 1.0);
+  }
+  h1, h2 {
+    font-weight: 200;
+  }
+  h3, h4, h5, p {
+    font-weight: 400;
+  }
+  h6, strong {
+    font-weight: 600;
+  }
+  h1 {
+    letter-spacing: -1.5;
+  }
+  h2 {
+    letter-spacing: -0.5;
+  }
+  h3, h5 {
+    letter-spacing: 0;
+  }
+  h4 {
+    letter-spacing: 0.25;
+  }
+  h6 {
+    letter-spacing: 0.15;
+  }
+  p {
+    letter-spacing: 0.5;
+    text-decoration: none;
+  }
+  i {
+    font-style:italic;
   }
 
-  .headerDrawer li{
+/* HEADER */
+  .screen-links {
     visibility: visible;
-    padding: 10px;
+    margin-right: 250px;
   }
-}
+  .screen-links > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .screen-links li {
+    float:right;
+    padding:0px 20px;
+  }
+  .screen-links a{
+    color:#DDD6DD
+  }
+  .link-style {
+    text-decoration:none;
+    font-size:14pt;
+    display: block;
+  }
+  .link-style:hover {
+    color:white;
+  }
+  .toggle-drawer, .headerDrawer, .fa-bars {
+    visibility: hidden;
+  }
+  #imge{
+    padding-left: 89px;
+    border-radius: 4px;
+  }
 
- /* FOR up to iPhone 6/7/8 */
+/* INTRO  */
+  figure>img {
+    width:196px;
+    height:300px;
+  }
+  .card-box { 
+    width:90vw;
+    height:97%;
+    padding:4px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction:column;
+    align-items:center;
+    background-color:#fff;
+    border-radius: 6px;
+    -webkit-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
+    -moz-box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
+    box-shadow: -4px 10px 67px -17px rgba(110,94,126,1);
+  }
+  .rflex { 
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction:row;
+    align-items:center;
+    border: 0px solid red;
+  }
+  figure > .desktop-left {
+    margin-left:3vw;
+  }
+  figure > .desktop-right {
+    margin-right:3vw;
+  }
 
-@media (max-height: 700px) { 
-  #imge {
-    height: 9vh;
+/* TOPICS */
+  h3:hover {
+    cursor: pointer;
+  }
+  .topics-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 2px;
+    margin: 1px;
     border-radius: 3px;
-    padding-left: 19px
+    font-weight: 600;
   }
-  h1 { 
-    font-size:16pt;
-    padding:4vw 4vw 0vw 4vw; 
+  .formatted-list{
+    width: 100%;
+  }
+  .topics-wrapper h3{
+    float: right;
+    margin: 1rem;
+  }
+  .politics-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    float: right;
+    background: url(./images/politics-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+  }
+  .legal-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(./images/legal-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+  }
+  .education-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(./images/education-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+  }
+  .business-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(./images/business-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+  }
+  .social-wrap{
+    height:75px;
+    margin: 3px;
+    width: 300px;
+    background: url(./images/social-mobile.jpg);
+    padding: 2px;
+    border-radius: 2px;
+  }
+  .politics-wrap h3, .legal-wrap h3 {
+    color: white;
+  }  
+
+/* MEDIA QUERIES */
+
+  /* FOR DESKTOP (LG) */
+    body {
+      font-size: 1rem;
+      line-height: 1.375rem;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      max-width: 55rem;
+      margin: 1rem auto;
+    }
+    h1 { 
+      font-size: 3rem;
+      line-height: 2.125rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h2 { 
+      font-size: 2.25rem;
+      line-height: 1.25rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h3 { 
+      font-size: 1.75rem;
+      line-height: 1.25rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h4, h5, h6 { 
+      font-size: 1.125rem;
+      line-height: 1.2222222rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    p { 
+      max-width: 55rem;
+      margin: 1rem auto;
+      padding: 0 4rem; 
+      text-indent: 2rem;
+    }
+
+  /* FOR TABLET (MD)  */
+  @media (max-width: 1280px) {
+    body {
+      font-size: 1rem;
+      line-height: 1.375rem;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      max-width: 55rem;
+      margin: 1rem auto;
+    }
+    h1 { 
+      font-size: 2.5rem;
+      line-height: 2.075rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h2 { 
+      font-size: 2rem;
+      line-height: 1.25rem;
+      padding: 0 2em; 
+      text-align: center
+    } 
+    h3 { 
+      font-size: 1.5rem;
+      line-height: 1.25rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h4, h5, h6 { 
+      font-size: 1.125rem;
+      line-height: 1.2222222rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    p { 
+      max-width: 55rem;
+      margin: 1rem auto;
+      padding: 0 4rem; 
+      text-indent: 2rem;
+    }
   }
 
-  p { 
-    line-height: 150%;
-    padding:0vw 4vw; 
-    font-size:12pt;
+  /* FOR TABLET (SM)  */
+  @media (max-width: 960px) {
+    body {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      max-width: 55rem;
+      margin: 1rem auto;
+    }
+    h1 { 
+      font-size: 2rem;
+      line-height: 1.75rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h2 { 
+      font-size: 1.625rem;
+      line-height: 1.153rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h3 { 
+      font-size: 1.375rem;
+      line-height: 1.136rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h4, h5, h6 { 
+      font-size: 1.125rem;
+      line-height: 1.111111rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    p { 
+      max-width: 55rem;
+      margin: 1rem auto;
+      padding: 0 4rem; 
+      text-indent: 2rem;
+    }
+    /* Hide the screen items on handhelds */
+    figure>img, .screen-links, .screen-links > ul, .screen-links > li{
+      visibility: hidden;
+      width:1px;
+    }
+    /* Hamburger menu  */
+    .fa-bars {
+      visibility: visible;
+      font-size: 2rem;
+      color:var(--lite);
+      padding:5px 20px 0px 0px;
+    }
+    .toggle-drawer {
+      visibility: visible;
+    }
+    .headerDrawer{
+      visibility: visible;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      padding-top: 250px;
+      width: 150px;
+      height: 100%;
+      background: var(--main);
+      line-height:150%;
+    }
+    .headerDrawer li{
+      visibility: visible;
+      padding: 10px;
+    }
+    #imge {
+      height: 9vh;
+      border-radius: 3px;
+      padding-left: 22px
+    }
   }
 
-  /* Hamburger menu  */
-
-  .fa-bars {
-    font-size: 1.7rem;
+  /* FOR MOBILE (XS)  */
+  @media (max-width: 600px) {
+    body {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      max-width: 35rem;
+      margin: 1rem auto;
+    }
+    h1 { 
+      font-size: 2rem;
+      line-height: 1.75rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h2 { 
+      font-size: 1.625rem;
+      line-height: 1.153rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h3 { 
+      font-size: 1.375rem;
+      line-height: 1.136rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    h4, h5, h6 { 
+      font-size: 1.125rem;
+      line-height: 1.111111rem;
+      padding: 0 2em; 
+      text-align: center
+    }
+    p { 
+      max-width: 35rem;
+      margin: 1rem auto;
+      padding: 0 4rem; 
+      text-indent: 2rem;
+    }
+    /* Hamburger menu  */
+    .fa-bars {
+      font-size: 1.7rem;
+    }
+    #imge {
+      height: 9vh;
+      border-radius: 3px;
+      padding-left: 19px
+    }
   }
-
-}
