@@ -93,7 +93,7 @@ class Chart extends Component {
                             position: this.props.legendPosition,
                             labels:{
                                 fontColor: 'black',
-                                fontSize: 20
+                                fontSize: 14
                             }
 
                         }
