@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { Pie } from "react-chartjs-2";
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import './chart.css';
 
 class Chart extends Component {
     constructor() {
@@ -93,16 +94,15 @@ class Chart extends Component {
                             position: this.props.legendPosition,
                             labels:{
                                 fontColor: 'black',
-                                fontSize: 20
+                                fontSize: 14
                             }
 
                         }
                     }}
                 />
-                <div>
-                    <Link to='/articles-2'>
-                        <button>Next Article</button>
-                    </Link>
+
+                <div className="center-me">
+                        <button onClick={()=>this.props.closeGraphModal()}>Next Article</button>                                    
                 </div>
             </div>
         )

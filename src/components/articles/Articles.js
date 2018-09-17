@@ -14,6 +14,14 @@ import rach from '../../images/aboutrachel.jpg';
 import jes from '../../images/aboutjesse.jpg';
 import sean from '../../images/aboutsean.jpg';
 import greg from '../../images/aboutgreg.JPG';
+import car1 from '../../images/carouselbreakingnews.jpg';
+import car2 from '../../images/carouselflorence.jpg';
+import car3 from '../../images/carouselflorencepeople.jpg';
+import car4 from '../../images/carouselnfl.jpg';
+import car5 from '../../images/carouselnfl2.jpg';
+import car6 from '../../images/carouselplanes.jpg';
+import car7 from '../../images/carouselplants.jpg';
+import car8 from '../../images/carouselsoccer.jpg';
 // import {BrowserRouter as Router, Link } from 'react-router-dom';
 
 
@@ -50,6 +58,17 @@ class Articles extends Component {
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
+    const { articles, indexArt1, indexArt2 ,updateIndexArt1AndIndexArt2 } = this.props;    
+    let index1 = indexArt1;
+    let index2 = indexArt2;
+    index1 += 2
+    index2 += 2
+    updateIndexArt1AndIndexArt2(index1,index2)
+    if(index2 > articles.length){
+      index1 = 0
+      index2 = 1
+      updateIndexArt1AndIndexArt2(index1,index2)
+  }
   }
   styleArticles(articles) {
     const { getFiveArticles } = this.props;
@@ -94,31 +113,40 @@ class Articles extends Component {
     getFiveArticles(articles);
   }
   render() {
-    const { articles, indexArt1, indexArt2, updateIndexArt1AndIndexArt2 } = this.props;
-    let index1 = Math.floor(Math.random() * 2);
-    let index2 = index1 === 0 ? 1 : 0;
-    updateIndexArt1AndIndexArt2(index1, index2);
-    const newArticle = articles
-      .map((article, i) => (
-        <div key={i}>
-          <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
-        </div>
-      ));
+    let {articles,indexArt1, indexArt2} = this.props
+    // const newArticle = articles
+    //   .map((article, i) => (
+    //     <div key={i}>
+    //       <article> <ReplaceSource content={article.article_body} source={article.source} /> </article>
+    //     </div>
+    //   ));
     let data = [
-      {
-        imgSrc: rach
-      },
       {
         imgSrc: logo
       },
       {
-        imgSrc: jes
+        imgSrc: car1
       },
       {
-        imgSrc: sean
+        imgSrc: car2
       },
       {
-        imgSrc: greg
+        imgSrc: car3
+      },
+      {
+        imgSrc: car4
+      },
+      {
+        imgSrc: car5
+      },
+      {
+        imgSrc: car6
+      },
+      {
+        imgSrc: car7
+      },
+      {
+        imgSrc: car8
       }
     ];
     const breakPoints = {
@@ -130,7 +158,9 @@ class Articles extends Component {
       //desktop
       sliderBoxStyle = {
         height: "90px",
-        width: "1099px",
+        width: "899px",
+        marginBottom:'20px',
+        marginTop:'20px',
         background: "transparent"
       }
     } else if(window.innerWidth <= breakPoints.phone){
@@ -140,7 +170,8 @@ class Articles extends Component {
         marginBottom:'40px',
         marginTop:'20px',
         height:'80px',
-        background:'transparent'
+        background:'green'
+        
       }
     }
 
@@ -164,7 +195,8 @@ class Articles extends Component {
               }}
               manner={{
                 autoSliding: {
-                  interval: "5s"
+                  interval: "3s",
+                  duration: "2s"
                 }
               }}
             />
@@ -172,7 +204,7 @@ class Articles extends Component {
           <div className='accordion_style'>
             <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
             <div className="alt">Read both articles and share which is more reasonable.</div>
-            <i className='arrow right' onClick={() => this.openModal()}></i>
+            <i className='arrow right' onClick={() => this.openModal()}></i>            
             <Accordion>
               <AccordionItem transition={2000}>
                 <AccordionItemTitle>
