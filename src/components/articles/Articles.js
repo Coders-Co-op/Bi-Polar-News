@@ -50,12 +50,17 @@ class Articles extends Component {
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
-    const { indexArt1, indexArt2 ,updateIndexArt1AndIndexArt2 } = this.props;    
+    const { articles, indexArt1, indexArt2 ,updateIndexArt1AndIndexArt2 } = this.props;    
     let index1 = indexArt1;
     let index2 = indexArt2;
     index1 += 2
     index2 += 2
-    updateIndexArt1AndIndexArt2(index1, index2);
+    updateIndexArt1AndIndexArt2(index1,index2)
+    if(index2 > articles.length){
+      index1 = 0
+      index2 = 1
+      updateIndexArt1AndIndexArt2(index1,index2)
+  }
   }
   styleArticles(articles) {
     const { getFiveArticles } = this.props;
