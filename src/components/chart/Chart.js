@@ -94,13 +94,13 @@ class Chart extends Component {
                             position: this.props.legendPosition,
                             labels:{
                                 fontColor: 'black',
-                                fontSize: 20
+                                fontSize: 14
                             }
 
                         }
                     }}
                 />
-                <div>
+                <div className="center-me">
                     <Link to='/articles-2'>
                         <button>Next Article</button>
                     </Link>

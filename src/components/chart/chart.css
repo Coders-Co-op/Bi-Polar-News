@@ -5,4 +5,20 @@ button {
     -webkit-box-shadow: 6px 5px 24px #666666;
     -moz-box-shadow: 6px 5px 24px #666666;
     box-shadow: 6px 5px 24px #666666;
+
+}
+
+.center-me {
+    float:right;
+    margin:20px;
+}
+
+@media (max-height: 799px) { 
+    button {
+        font-size:10pt;
+        padding:6px;
+        -webkit-box-shadow: 5px 4px 20px #666666;
+        -moz-box-shadow: 5px 4px 20px #666666;
+        box-shadow: 5px 4px 20px #666666;
+    }
 }
