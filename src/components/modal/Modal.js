@@ -48,7 +48,7 @@ export default class Modal extends Component {
           style={modalStyles}
         >
         <i class="fa fa-times" onClick={()=>this.props.closeGraphModal()}></i>        
-          <Chart />
+          <Chart closeGraphModal={()=>this.props.closeGraphModal()} />
         </ReactModal>
       </div>
     )

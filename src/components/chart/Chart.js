@@ -100,10 +100,9 @@ class Chart extends Component {
                         }
                     }}
                 />
+
                 <div className="center-me">
-                    <Link to='/articles-2'>
-                        <button>Next Article</button>
-                    </Link>
+                        <button onClick={()=>this.props.closeGraphModal()}>Next Article</button>                                    
                 </div>
             </div>
         )
