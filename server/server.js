@@ -11,11 +11,15 @@ const express = require("express"),
 const app = express();
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
+
+
+
+
 // MIDDLEWARE
 app.use(bodyParser.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
-
+app.use( express.static( `${__dirname}/../build` ) );
 // ENDPOINTS
 
 //Get 5 articles, random topic, onload
