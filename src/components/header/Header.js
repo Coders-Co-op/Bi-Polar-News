@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Drawer from '@material-ui/core/Drawer'
 import {Link} from 'react-router-dom'
 import logo from '../../images/liberal-and-conservative-news-sources.png'
-import './header.css'
+
 
 export default class Header extends Component {
   constructor(){
