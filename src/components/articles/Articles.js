@@ -10,19 +10,14 @@ import ReplaceSource from '../ReplaceSource';
 import Modal from '../modal/Modal';
 import './article.css';
 import logo from '../../images/liberal-and-conservative-news-sources.png';
-import rach from '../../images/aboutrachel.jpg';
-import jes from '../../images/aboutjesse.jpg';
-import sean from '../../images/aboutsean.jpg';
-import greg from '../../images/aboutgreg.JPG';
 import car1 from '../../images/carouselbreakingnews.jpg';
 import car2 from '../../images/carouselflorence.jpg';
 import car3 from '../../images/carouselflorencepeople.jpg';
 import car4 from '../../images/carouselnfl.jpg';
 import car5 from '../../images/carouselnfl2.jpg';
 import car6 from '../../images/carouselplanes.jpg';
-import car7 from '../../images/carouselplants.jpg';
 import car8 from '../../images/carouselsoccer.jpg';
-// import {BrowserRouter as Router, Link } from 'react-router-dom';
+import car7 from '../../images/carouselpolitics.jpg';
 
 
 
@@ -170,7 +165,7 @@ class Articles extends Component {
         marginBottom:'40px',
         marginTop:'20px',
         height:'80px',
-        background:'green'
+        background:'transparent'
         
       }
     }
@@ -201,7 +196,22 @@ class Articles extends Component {
               }}
             />
           </div>
-          <div className='accordion_style'>
+          <div className="non-accordion-style">
+            <div className="article-col-1">
+            <h3>{articles[indexArt1].title}</h3>
+            {articles[indexArt1].article_body}
+
+
+            </div>
+            <div className="article-col-2"> 
+            <h3>{articles[indexArt2].title}</h3>
+            {articles[indexArt2].article_body}
+
+
+            </div>
+
+          </div>
+          <div className='accordion-style'>
             <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
             <div className="alt">Read both articles and share which is more reasonable.</div>
             <i className='arrow right' onClick={() => this.openModal()}></i>            
