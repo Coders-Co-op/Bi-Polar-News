@@ -1,7 +1,9 @@
 div > h3{
   text-align: center
 }
-
+body{
+  background: var(--lite);
+}
 summary {
   font-size:14pt;
   text-align:center;
