@@ -208,6 +208,7 @@ class Articles extends Component {
             {articles[indexArt2].article_body}
 
 
+            <i className='arrow right' onClick={() => this.openModal()}></i>            
             </div>
 
           </div>
