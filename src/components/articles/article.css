@@ -59,7 +59,7 @@ summary {
 
 /* For handhelds */
 
-@media (max-height: 799px) { 
+@media (max-height: 769px) { 
   
   summary {
     visibility: hidden;

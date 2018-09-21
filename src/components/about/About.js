@@ -38,7 +38,7 @@ export default () => {
               <h3>Jesse</h3>
             </div>
             <div className='floatright'>
-              <p>Solutions Architect / Web Developer / Operations Analyst. <a href="https://www.linkedin.com/in/jessefisherwebdev/" target="_blank" rel="noopener noreferrer" >LinkedIn</a></p>
+              <p>Software Engineer / Web Developer / Operations Analyst. <a href="https://www.linkedin.com/in/jessefisherwebdev/" target="_blank" rel="noopener noreferrer" >LinkedIn</a></p>
             </div>
           </div>
 
