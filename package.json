@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.0.2",
-    "adjective": "^0.1.1",
+    "adjectives": "^1.0.2",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",

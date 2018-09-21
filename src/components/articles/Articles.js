@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import _ from "lodash";
-import adj from "adjective";
+import adj from "adjectives";
 import { connect } from "react-redux";
 import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from "react-accessible-accordion";
@@ -226,7 +226,7 @@ class Articles extends Component {
           <div className='accordion-style'>
             <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
             <div className="alt">Read both articles and share which is more reasonable.</div>
-            <div>{instruction}</div>
+            <summary>{instruction}</summary>
             <i className='arrow right' onClick={() => this.openModal()}></i>
             <Accordion>
               <AccordionItem transition={2000}>
