@@ -54,10 +54,10 @@
 
 /* For handhelds */
 
-@media (max-height: 799px) { 
+@media (max-height: 769px) { 
   
   h1 {
-    font-size:14pt;
+    font-size:13pt;
     padding-top:0px;
   }
   

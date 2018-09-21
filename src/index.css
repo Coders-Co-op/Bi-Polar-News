@@ -92,6 +92,7 @@
     visibility: hidden;
   }
   #imge{
+    height:10vh;
     padding-left: 89px;
     border-radius: 4px;
   }
