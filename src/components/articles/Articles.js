@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import _ from "lodash";
+import adj from "adjective";
 import { connect } from "react-redux";
 import { getFiveArticles, updateIndexArt1AndIndexArt2 } from "../../ducks/reducer";
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from "react-accessible-accordion";
@@ -53,17 +54,17 @@ class Articles extends Component {
   }
   closeGraphModal() {
     this.setState({ graphModal: false })
-    const { articles, indexArt1, indexArt2 ,updateIndexArt1AndIndexArt2 } = this.props;    
+    const { articles, indexArt1, indexArt2, updateIndexArt1AndIndexArt2 } = this.props;
     let index1 = indexArt1;
     let index2 = indexArt2;
     index1 += 2
     index2 += 2
-    updateIndexArt1AndIndexArt2(index1,index2)
-    if(index2 > articles.length){
+    updateIndexArt1AndIndexArt2(index1, index2)
+    if (index2 > articles.length) {
       index1 = 0
       index2 = 1
-      updateIndexArt1AndIndexArt2(index1,index2)
-  }
+      updateIndexArt1AndIndexArt2(index1, index2)
+    }
   }
   styleArticles(articles) {
     const { getFiveArticles } = this.props;
@@ -83,10 +84,19 @@ class Articles extends Component {
       let paragraph = [];
       let count = 0;
       articleArr.forEach((e, i) => {
-        paragraph.push(e)
-
         if (readyArticleForParagraphs.test(e)) {
           count++
+        }
+        if (!/(\.\.\.|\?|!|\.)$/.test(e)) {
+          if (adj.includes(e)) {
+            e = `{${e}}`;
+          }
+          paragraph.push(e);
+        } else {
+          if (adj.includes(e.match(/\w*/i)[0])) {
+            e = e.replace(e.match(/\w*/i)[0], `{${e}}`);
+          }
+          paragraph.push(e)
         }
         if (count === 5) {
           paragraphs.push(paragraph.join(" "));
@@ -108,7 +118,8 @@ class Articles extends Component {
     getFiveArticles(articles);
   }
   render() {
-    let {articles,indexArt1, indexArt2} = this.props
+    let { articles, indexArt1, indexArt2 } = this.props
+    let instruction = "NOTE: '{ }' surrounding words highlight adjectives that may express bias"
     // const newArticle = articles
     //   .map((article, i) => (
     //     <div key={i}>
@@ -145,28 +156,28 @@ class Articles extends Component {
       }
     ];
     const breakPoints = {
-      desktop: 1040, 
-      phone:540
+      desktop: 1040,
+      phone: 540
     }
     let sliderBoxStyle = {};
-    if(window.innerWidth > breakPoints.desktop){
+    if (window.innerWidth > breakPoints.desktop) {
       //desktop
       sliderBoxStyle = {
         height: "90px",
         width: "899px",
-        marginBottom:'20px',
-        marginTop:'20px',
+        marginBottom: '20px',
+        marginTop: '20px',
         background: "transparent"
       }
-    } else if(window.innerWidth <= breakPoints.phone){
+    } else if (window.innerWidth <= breakPoints.phone) {
       //Phone
       sliderBoxStyle = {
-        width:'380px',
-        marginBottom:'40px',
-        marginTop:'20px',
-        height:'80px',
-        background:'transparent'
-        
+        width: '380px',
+        marginBottom: '40px',
+        marginTop: '20px',
+        height: '80px',
+        background: 'transparent'
+
       }
     }
 
@@ -198,24 +209,25 @@ class Articles extends Component {
           </div>
           <div className="non-accordion-style">
             <div className="article-col-1">
-            <h3>{articles[indexArt1].title}</h3>
-            {articles[indexArt1].article_body}
+              <h3>{articles[indexArt1].title}</h3>
+              {articles[indexArt1].article_body}
 
 
             </div>
-            <div className="article-col-2"> 
-            <h3>{articles[indexArt2].title}</h3>
-            {articles[indexArt2].article_body}
+            <div className="article-col-2">
+              <h3>{articles[indexArt2].title}</h3>
+              {articles[indexArt2].article_body}
 
 
-            <i className='arrow right' onClick={() => this.openModal()}></i>            
+              <i className='arrow right' onClick={() => this.openModal()}></i>
             </div>
 
           </div>
           <div className='accordion-style'>
             <summary><strong>Instructions:</strong>  Read both articles, then on the next page, share which you think is more reasonable.</summary>
             <div className="alt">Read both articles and share which is more reasonable.</div>
-            <i className='arrow right' onClick={() => this.openModal()}></i>            
+            <div>{instruction}</div>
+            <i className='arrow right' onClick={() => this.openModal()}></i>
             <Accordion>
               <AccordionItem transition={2000}>
                 <AccordionItemTitle>
