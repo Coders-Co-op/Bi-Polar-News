@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import _ from "lodash";
+import adj from "adjectives";
 import './topics.css';
 import { connect } from 'react-redux'
 import { getFiveArticles } from '../../ducks/reducer';
@@ -52,10 +53,19 @@ class Topics extends Component {
       let paragraph = [];
       let count = 0;
       articleArr.forEach((e, i) => {
-        paragraph.push(e)
-
         if (readyArticleForParagraphs.test(e)) {
           count++
+        }
+        if (!/(\.\.\.|\?|!|\.)$/.test(e)) {
+          if (adj.includes(e)) {
+            e = `{${e}}`;
+          }
+          paragraph.push(e);
+        } else {
+          if (adj.includes(e.match(/\w*/i)[0])) {
+            e = e.replace(e.match(/\w*/i)[0], `{${e}}`);
+          }
+          paragraph.push(e)
         }
         if (count === 5) {
           paragraphs.push(paragraph.join(" "));
